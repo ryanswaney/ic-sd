@@ -1,0 +1,26 @@
+$base-font-family: "adobe-caslon-pro", "Adobe Caslon Pro", serif;
+$heading-font-family: "futura-pt", "Futura PT", sans-serif;
+$navigation-font-family: "futura-pt", "Futura PT", sans-serif;
+
+// Font Sizes
+$base-font-size: 1em;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Colors
+$base-font-color: #333;
+$highlight-color: #f99d1c;
+$base-border-color: #ccc;
+$action-color: #40b4e4;
+
+// Screen Sizing
+$medium-screen: em(640) !default;
+$large-screen: em(860) !default;

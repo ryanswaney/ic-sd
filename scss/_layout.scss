@@ -1,0 +1,31 @@
+// Primary Grid/Layout Settings
+
+.site {
+  width: 100%;
+}
+
+.site-header {
+  width: 100%;
+}
+
+.site-content {
+  width: 100%;
+}
+
+.content-area {
+  @include outer-container;
+}
+
+.site-main {
+  @include span-columns(12);
+}
+
+.site-footer {
+  width: 100%;
+}
+
+// Posts & Pages Grid/Layout
+article.page {
+  @include span-columns(8 of 12);
+  @include shift(2);
+}

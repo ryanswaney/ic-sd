@@ -7,7 +7,7 @@ Description: WordPress theme for the Int. Conference on Sustainable Development.
 Version: 1.0-wpcom
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: icsd
+Text Domain: Int. Conference on Sustainable Development
 Tags:
 
 */
@@ -15,4 +15,13 @@ Tags:
 @import "scss/normalize";
 
 @import "bourbon/bourbon";
+
+$visual-grid: true !default;
+$visual-grid-color: #eee !default;
+
 @import "neat/neat";
+
+@import "scss/settings";
+
+@import "scss/layout";
+@import "scss/typography";
