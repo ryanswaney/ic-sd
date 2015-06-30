@@ -1,3 +1,5 @@
+// http://www.modularscale.com/?1&em&1.25&web&text
+
 body {
   font-family: $base-font-family;
   font-size: $base-font-size;
@@ -7,4 +9,29 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: $heading-font-family;
   line-height: $heading-line-height;
+  
+}
+
+.entry-title {
+  @include border-color($base-border-color);
+  @include border-width(0 0 2px 0);
+  @include border-style(solid);
+
+  @include pad(0 0 1rem 0);
+}
+
+.entry-content {
+
+  h1, h2 {
+    font-size: 1.563em;
+  }
+
+  h3, h4, h5, h6 {
+    font-size: 1.25em;
+  }
+
+  p, li {
+    font-size: 1.25em;
+  }
+
 }

@@ -69,3 +69,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	}
 	add_action( 'wp_head', 'icsd_render_title' );
 endif;
+
+// Remove WordPress Emoji scripts and styles from header
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');

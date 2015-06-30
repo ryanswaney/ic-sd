@@ -1,0 +1,33 @@
+.menu-toggle {
+    display: block;
+    height: 49px;
+    line-height: 50px;
+    position: absolute;
+    left: 0;
+    padding: 0 15px;
+    border-right: 1px solid #ccc;
+    font-family: $navigation-font-family;
+    text-transform: uppercase;
+    font-weight: 700;
+
+  }
+
+.main-navigation {
+
+  .menu {
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    height: 100%;
+    overflow: auto;
+    left: -100%;
+    width: 200px;
+    background: #fff;
+  }
+
+}
+.main-navigation.toggled {
+  .menu {
+    left: 0;
+  }
+}
