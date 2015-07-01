@@ -11,8 +11,26 @@
   right: 0;
   height: 50px;
   background-color: white;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid $base-border-color;
   z-index: 999999;
+}
+
+.site-branding {
+  height: 50px;
+  line-height: 50px;
+  position: absolute;
+  left: 77px;
+  width: auto;
+
+  h1 {
+    line-height: 1.6;
+
+    span {
+      font-weight: 300;
+    }
+
+  }
+
 }
 
 .site-content {
@@ -30,6 +48,16 @@
 
 .site-footer {
   width: 100%;
+}
+
+.page-header {
+  @include span-columns(10 of 12);
+  @include shift(1);
+
+  @include media($large-screen) {
+    @include span-columns(8 of 12);
+    @include shift(2);
+  }
 }
 
 // Posts & Pages Grid/Layout

@@ -44,6 +44,7 @@ function icsd_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary Menu', 'icsd' ),
+		'social' => esc_html__( 'Social Media', 'icsd' )
 	) );
 
 	/*
@@ -63,10 +64,12 @@ function icsd_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
+	/*
 	add_theme_support( 'custom-background', apply_filters( 'icsd_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+	*/
 }
 endif; // icsd_setup
 add_action( 'after_setup_theme', 'icsd_setup' );
@@ -88,6 +91,7 @@ add_action( 'after_setup_theme', 'icsd_content_width', 0 );
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
+/*
 function icsd_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'icsd' ),
@@ -100,6 +104,7 @@ function icsd_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'icsd_widgets_init' );
+*/
 
 /**
  * Enqueue scripts and styles.
@@ -135,9 +140,9 @@ require get_template_directory() . '/inc/extras.php';
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+//require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Load Jetpack compatibility file.
  */
-require get_template_directory() . '/inc/jetpack.php';
+//require get_template_directory() . '/inc/jetpack.php';

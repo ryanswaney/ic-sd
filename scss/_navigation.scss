@@ -5,10 +5,17 @@
     position: absolute;
     left: 0;
     padding: 0 15px;
-    border-right: 1px solid #ccc;
     font-family: $navigation-font-family;
     text-transform: uppercase;
     font-weight: 700;
+
+    background: #fff;
+
+    outline: none;
+
+    @include border-style(solid);
+    @include border-color($base-border-color);
+    @include border-width(0 1px 0 0);
 
   }
 
@@ -23,11 +30,50 @@
     left: -100%;
     width: 200px;
     background: #fff;
+
+    @include border-style(solid);
+    @include border-color($base-border-color);
+    @include border-width(0 1px 0 0);
+
+    -moz-transition: left 0.1s ease-in-out;
+    -o-transition: left 0.1s ease-in-out;
+    -webkit-transition: left 0.1s ease-in-out;
+    transition: left 0.1s ease-in-out;
+
+
   }
 
 }
 .main-navigation.toggled {
   .menu {
     left: 0;
+  }
+  .menu-toggle{
+    background: $action-color;
+    color: #fff;
+  }
+}
+
+.nav-menu {
+    @include pad(0);
+    @include margin(0);
+    list-style: none;
+  }
+
+.menu-item {
+
+  a {
+    @include pad(1em);
+    display: block;
+
+    font-family: $navigation-font-family;
+    line-height: $navigation-line-height;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @include border-width(0 0 1px 0);
+    @include border-color($base-border-color);
+    @include border-style(solid);
+
   }
 }
