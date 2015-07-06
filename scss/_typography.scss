@@ -34,4 +34,39 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.25em;
   }
 
+  a {
+    color: $action-color;
+    text-decoration: none;
+    @include border-style(solid);
+    @include border-width(0 0 1px 0);
+    @include border-color($action-color);
+
+    &:hover, &:focus {
+      color: darken($action-color, 25%);
+    }
+  }
+
+}
+
+.event-theme {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  font-style: italic;
+  font-weight: 400;
+}
+
+// Speakers
+.speaker-list {
+  list-style: none;
+  @include pad(0);
+}
+
+.speaker-name {
+  font-size: 1.5em;
+}
+.speaker-title {
+  font-size: $base-font-size;
+  font-family: $base-font-family;
+  font-weight: 400;
+  @include margin(0 auto auto auto);
 }

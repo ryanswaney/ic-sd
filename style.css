@@ -422,6 +422,33 @@ th {
 .site-footer {
   width: 100%; }
 
+article.page, article.post {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 82.94039%;
+  margin-left: 8.5298%; }
+  article.page:last-child, article.post:last-child {
+    margin-right: 0; }
+  @media screen and (min-width: 53.75em) {
+    article.page, article.post {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 65.88078%;
+      margin-left: 17.05961%; }
+      article.page:last-child, article.post:last-child {
+        margin-right: 0; } }
+
+article.events {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 82.94039%;
+  margin-left: 8.5298%; }
+  article.events:last-child {
+    margin-right: 0; }
+
 .page-header {
   float: left;
   display: block;
@@ -440,23 +467,14 @@ th {
       .page-header:last-child {
         margin-right: 0; } }
 
-article.page, article.post {
+.post-type-archive-events .page-header {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 82.94039%;
   margin-left: 8.5298%; }
-  article.page:last-child, article.post:last-child {
+  .post-type-archive-events .page-header:last-child {
     margin-right: 0; }
-  @media screen and (min-width: 53.75em) {
-    article.page, article.post {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 65.88078%;
-      margin-left: 17.05961%; }
-      article.page:last-child, article.post:last-child {
-        margin-right: 0; } }
 
 body {
   font-family: "adobe-caslon-pro", "Adobe Caslon Pro", serif;
@@ -479,6 +497,33 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.25em; }
 .entry-content p, .entry-content li {
   font-size: 1.25em; }
+.entry-content a {
+  color: #40b4e4;
+  text-decoration: none;
+  border-style: solid;
+  border-width: 0 0 1px;
+  border-color: #40b4e4; }
+  .entry-content a:hover, .entry-content a:focus {
+    color: #146c90; }
+
+.event-theme {
+  font-family: "adobe-caslon-pro", "Adobe Caslon Pro", serif;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 400; }
+
+.speaker-list {
+  list-style: none;
+  padding: 0; }
+
+.speaker-name {
+  font-size: 1.5em; }
+
+.speaker-title {
+  font-size: 1em;
+  font-family: "adobe-caslon-pro", "Adobe Caslon Pro", serif;
+  font-weight: 400;
+  margin: 0 auto auto; }
 
 .menu-toggle {
   display: block;

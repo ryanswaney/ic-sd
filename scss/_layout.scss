@@ -50,6 +50,22 @@
   width: 100%;
 }
 
+// Posts & Pages Grid/Layout
+article.page, article.post {
+
+  @include span-columns(10 of 12);
+  @include shift(1);
+
+  @include media($large-screen) {
+    @include span-columns(8 of 12);
+    @include shift(2);
+  }
+}
+article.events {
+  @include span-columns(10 of 12);
+  @include shift(1);
+}
+
 .page-header {
   @include span-columns(10 of 12);
   @include shift(1);
@@ -60,14 +76,9 @@
   }
 }
 
-// Posts & Pages Grid/Layout
-article.page, article.post {
-
-  @include span-columns(10 of 12);
-  @include shift(1);
-
-  @include media($large-screen) {
-    @include span-columns(8 of 12);
-    @include shift(2);
+.post-type-archive-events {
+  .page-header {
+    @include span-columns(10 of 12);
+    @include shift(1);
   }
 }

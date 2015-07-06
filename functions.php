@@ -138,11 +138,12 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 
 /**
- * Customizer additions.
- */
-//require get_template_directory() . '/inc/customizer.php';
+ * Custom Functions for ACF fields
+**/
+require get_template_directory() . '/inc/acf-extras.php';
 
 /**
- * Load Jetpack compatibility file.
+ * Custom Post Type for Events
  */
-//require get_template_directory() . '/inc/jetpack.php';
+require get_template_directory() . '/inc/cpt-events.php';
+
