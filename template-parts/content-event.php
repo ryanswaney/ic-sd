@@ -29,10 +29,16 @@
 
 			<?php if( get_row_layout() == 'speaker_details' ): ?>
 				<li>
+					<?php if ( get_sub_field('speaker_name') ) : ?>
 					<h3 class="speaker-name"><?php the_sub_field('speaker_name'); /* Event -- Speaker Name // ACF */ ?></h2>
+					<?php endif; ?>
+					<?php if ( get_sub_field('speaker_title') ): ?>
 					<h4 class="speaker-title"><?php the_sub_field('speaker_title'); /* Event -- Speaker Title // ACF */ ?></h4>
+					<?php endif; ?>
+					<?php if ( get_sub_field('speaker_bio') ): ?>
 					<div class="speaker-bio">
 					<?php the_sub_field('speaker_bio'); /* Event -- Speaker Bio // ACF */ ?>
+					<?php endif; ?>
 					</div>
 				</li>
 			<?php endif; ?>
@@ -41,6 +47,9 @@
 		</ul>
 	</div>
 	<?php endif; ?>
+	<!-- .speakers -->
+
+	
 
 	<footer class="entry-footer">
 		<?php icsd_entry_footer(); ?>

@@ -10,7 +10,7 @@
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php icsd_posted_on(); ?>
+			<?php //icsd_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -18,7 +18,7 @@
 	<div class="entry-content">
 		<?php
 			/* translators: %s: Name of current post */
-			the_content( sprintf(
+			the_excerpt( sprintf(
 				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'icsd' ), array( 'span' => array( 'class' => array() ) ) ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
