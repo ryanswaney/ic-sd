@@ -49,7 +49,92 @@
 	<?php endif; ?>
 	<!-- .speakers -->
 
-	
+	<?php
+
+	$agenda_object = get_field('event_agenda');
+
+	if( $agenda_object ): ?>
+
+	<div class="schedule">
+
+	<ol class="sessions">
+
+	<?php if( have_rows('session_group_1', $agenda_object->ID) ): ?>
+
+		<?php while ( have_rows('session_group_1', $agenda_object->ID) ) : the_row(); ?>
+
+			<?php if( get_row_layout() == 'basic_session' ): ?>
+
+			<li class="single-session">
+				<time><?php the_sub_field('d1_bs_time'); ?></time>
+				<div class="event-description">
+					<h2><?php the_sub_field('d1_bs_title'); ?></h2>
+				</div>
+			</li>
+
+			<?php elseif( get_row_layout() == 'parallel_session' ): ?>
+
+			<li class="single-session has-session-info">
+				<time><?php the_sub_field('d1_ps_time'); ?></time>
+				<div class="event-description">
+					<h2><?php the_sub_field('d1_ps_title'); ?></h2>
+				</div>
+			</li>
+
+			<?php endif; // Session Layout ?>
+
+		<?php endwhile; ?>
+
+	<?php endif; // Day 1 Sessions ?>
+
+	<?php if( have_rows('session_group_2', $agenda_object->ID) ): ?>
+
+		<?php while ( have_rows('session_group_2', $agenda_object->ID) ) : the_row(); ?>
+
+
+		<?php if( get_row_layout() == 'd2_basic_session' ): ?>
+
+			<li class="single-session">
+				<time><?php the_sub_field('d2_bs_time'); ?></time>
+				<div class="event-description">
+					<h2><?php the_sub_field('d2_bs_title'); ?></h2>
+				</div>
+			</li>
+
+			<?php elseif( get_row_layout() == 'd2_parallel_session' ): ?>
+
+			<li class="single-session has-session-info">
+				<time><?php the_sub_field('d2_ps_time'); ?></time>
+				<div class="event-description">
+					<h2><?php the_sub_field('d2_ps_title'); ?></h2>
+
+					<div class="session-extended"></div>
+
+				</div>
+			</li>
+
+			<?php endif; // Session Layout ?>
+
+		<?php endwhile; ?>
+
+	<?php endif; // Day 2 Sessions ?>
+
+	</ol> <!-- // Sessions -->
+
+	</div>
+  
+  <?php //wp_reset_postdata(); // Reset the $post object so the rest of the page works correctly ?>
+
+	<?php endif; ?>
+
+
+	<?php $location = get_field('event_location_map'); ?>
+	<?php if( !empty($location) && !is_front_page() ): ?>
+		<h2>Location</h2>
+		<div class="event-map">
+			<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
+		</div>
+	<?php endif; ?>
 
 	<footer class="entry-footer">
 		<?php icsd_entry_footer(); ?>
