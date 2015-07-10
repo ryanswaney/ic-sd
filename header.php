@@ -24,10 +24,12 @@
 	<header id="masthead" class="site-header" role="banner">
 
 		<div class="site-branding">
-			<!-- <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1> -->
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<!--
 			<h1 class="site-title" style="margin: 0;">
 				<img src="http://icsd.local/wp-content/uploads/2015/07/icsd-logo.png" style="max-height: 25px; margin-left: 20px;">
 			</h1>
+			-->
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">

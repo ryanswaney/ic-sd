@@ -1,6 +1,21 @@
+// Offset anchor links for fixed header
+:target:before {
+    content: "";
+    display: block;
+    height: 140px;
+    margin: -140px 0 0;
+    outline: 0;
+}
+
+// Removes outline from focus
+:focus {
+    outline: 0;
+}
+
 .menu-toggle {
     display: block;
-    height: 49px;
+    //height: 49px;
+    height: 99px;
     line-height: 50px;
     position: absolute;
     left: 0;
@@ -23,10 +38,12 @@
 
   .menu {
     position: fixed;
-    top: 50px;
+    //top: 50px;
+    top: 100px;
     bottom: 0;
     height: 100%;
-    overflow: auto;
+    overflow: scroll;
+    padding-bottom: 100px;
     left: -100%;
     width: 200px;
     background: #fff;
@@ -66,7 +83,8 @@
     @include pad(1em);
     display: block;
 
-    font-family: $navigation-font-family;
+    font-family: $navigation-font-family;;
+    font-weight: 700;
     line-height: $navigation-line-height;
     text-decoration: none;
     text-transform: uppercase;

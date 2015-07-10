@@ -77,3 +77,21 @@ h1, h2, h3, h4, h5, h6 {
   list-style: none;
   @include pad(0);
 }
+
+.single-session {
+
+}
+
+.session-extended {
+  ol {
+    padding: 0;
+    list-style-position: inside;
+  }
+}
+
+.event-description {
+  h2 { 
+    font-size: $base-font-size;
+    margin-top: 0;
+  }
+}

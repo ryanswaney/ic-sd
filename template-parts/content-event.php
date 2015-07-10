@@ -55,7 +55,7 @@
 
 	if( $agenda_object ): ?>
 
-	<div class="schedule">
+	<div class="agenda">
 
 	<ol class="sessions">
 
@@ -68,6 +68,21 @@
 			<li class="single-session">
 				<time><?php the_sub_field('d1_bs_time'); ?></time>
 				<div class="event-description">
+
+				<?php
+					$image = get_sub_field('d1_bs_photo');
+
+					if( !empty($image) ):
+
+					$size = 'thumbnail';
+					$thumb = $image['sizes'][ $size ];
+
+					?>
+
+					<img class="session-thumb-photo" src="<?php echo $thumb ?>" alt="<?php echo $image['alt']; ?>" />
+
+					<?php endif; ?>
+
 					<h2><?php the_sub_field('d1_bs_title'); ?></h2>
 				</div>
 			</li>
@@ -78,6 +93,22 @@
 				<time><?php the_sub_field('d1_ps_time'); ?></time>
 				<div class="event-description">
 					<h2><?php the_sub_field('d1_ps_title'); ?></h2>
+
+					<?php if( have_rows('d1_ps_list') ): ?>
+					<div class="session-extended">
+						<ol>
+						<?php while ( have_rows('d1_ps_list') ) : the_row(); ?>
+							<li>
+								<h3><?php the_sub_field('d1_ps_title' ); ?></h3>
+								<div class="sub-session-desc">
+								<?php the_sub_field('d1_ps_desc'); ?>
+								</div>
+							</li>
+						<?php endwhile; ?>
+						</ol>
+					</div>
+					<?php endif; // Parallel Sessions ?>
+
 				</div>
 			</li>
 
@@ -97,6 +128,21 @@
 			<li class="single-session">
 				<time><?php the_sub_field('d2_bs_time'); ?></time>
 				<div class="event-description">
+
+				<?php
+					$image = get_sub_field('d2_bs_photo');
+
+					if( !empty($image) ):
+
+					$size = 'thumbnail';
+					$thumb = $image['sizes'][ $size ];
+
+					?>
+
+					<img class="session-thumb-photo" src="<?php echo $thumb ?>" alt="<?php echo $image['alt']; ?>" />
+
+					<?php endif; ?>
+
 					<h2><?php the_sub_field('d2_bs_title'); ?></h2>
 				</div>
 			</li>
@@ -108,7 +154,20 @@
 				<div class="event-description">
 					<h2><?php the_sub_field('d2_ps_title'); ?></h2>
 
-					<div class="session-extended"></div>
+					<?php if( have_rows('d2_ps_list') ): ?>
+					<div class="session-extended">
+						<ol>
+						<?php while ( have_rows('d2_ps_list') ) : the_row(); ?>
+							<li>
+								<h3><?php the_sub_field('d2_ps_title' ); ?></h3>
+								<div class="sub-session-desc">
+								<?php the_sub_field('d2_ps_desc'); ?>
+								</div>
+							</li>
+						<?php endwhile; ?>
+						</ol>
+					</div>
+					<?php endif; // Parallel Sessions ?>
 
 				</div>
 			</li>
@@ -130,10 +189,23 @@
 
 	<?php $location = get_field('event_location_map'); ?>
 	<?php if( !empty($location) && !is_front_page() ): ?>
+	<div class="location">
 		<h2>Location</h2>
 		<div class="event-map">
 			<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
 		</div>
+
+		<div class="event-dining">
+			<h3>Dining</h3>
+			<?php the_field('event_dining'); ?>
+		</div>
+
+		<div class="event-accommodations">
+			<h3>Accommodations</h3>
+			<?php the_field('event_accommodations'); ?>
+		</div>
+
+	</div>
 	<?php endif; ?>
 
 	<footer class="entry-footer">

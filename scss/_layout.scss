@@ -9,21 +9,26 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 50px;
-  background-color: white;
+  height: 100px;
+  background-color: rgba(255,255,255,.70);
   border-bottom: 1px solid $base-border-color;
   z-index: 999999;
 }
 
 .site-branding {
-  height: 50px;
+  height: 99px;
   line-height: 50px;
   position: absolute;
   left: 77px;
   width: auto;
+  overflow: auto;
+  padding-left: 1em;
 
   h1 {
     line-height: 1.6;
+    max-width: 60%;
+    font-size: 1em;
+    text-transform: uppercase;
 
     span {
       font-weight: 300;
@@ -39,7 +44,7 @@
 }
 
 .content-area {
-  @include outer-container;
+  @include outer-container(100%);
 }
 
 .site-main {
@@ -47,7 +52,7 @@
 }
 
 .site-footer {
-  width: 100%;
+  @include span-columns(12 of 12);
 }
 
 // Posts & Pages Grid/Layout
@@ -64,6 +69,11 @@ article.page, article.post {
 article.events {
   @include span-columns(10 of 12);
   @include shift(1);
+
+  .entry-footer {
+    @include span-columns(12);
+  }
+
 }
 
 .page-header {
@@ -84,28 +94,76 @@ article.events {
 }
 
 // Agenda
+
+.agenda {
+  @include span-columns(10 of 12);
+
+  @include media($large-screen) {
+    @include span-columns(12 of 12);
+  }
+}
+
 .sessions {
+
+  li:nth-child(odd) {
+    background-color: #ccc;
+  }
 
 }
 
 .single-session {
 
   @include outer-container;
+  @include border-color($base-border-color);
+  @include border-width(0 0 1px 0);
+  @include border-style(solid);
+  @include pad(1em 0);
 
   time {
     @include span-columns(10 of 12);
-    text-align: center;
+
+    @include media($large-screen) {
+      @include span-columns(3 of 12);
+    }
+
   }
   .event-description {
     @include span-columns(10 of 12);
+
+    @include media($large-screen) {
+      @include span-columns(9 of 12);
+    }
+
   }
+}
+
+.session-thumb-photo {
+  display: inline-block;
+  max-width: 75px;
+  height: auto;
 }
 
 
 // Location + Google Map
+
+.location {
+  @include span-columns(12 of 12);
+}
+
 .event-map {
   width: 100%;
   height: 400px;
   border: #ccc solid 1px;
   margin: 20px 0;
+}
+
+// Speakers 
+
+.speakers {
+  @include span-columns(10 of 12);
+
+  @include media($large-screen) {
+    @include span-columns(8 of 12);
+    @include shift(2);
+  }
 }
