@@ -7,6 +7,10 @@
     outline: 0;
 }
 
+.skip-link {
+    display: none;
+}
+
 // Removes outline from focus
 :focus {
     outline: 0;
@@ -15,7 +19,7 @@
 .menu-toggle {
     display: block;
     //height: 49px;
-    height: 99px;
+    height: 100px;
     line-height: 50px;
     position: absolute;
     left: 0;
@@ -28,9 +32,7 @@
 
     outline: none;
 
-    @include border-style(solid);
-    @include border-color($base-border-color);
-    @include border-width(0 1px 0 0);
+    border: none;
 
   }
 
@@ -47,10 +49,6 @@
     left: -100%;
     width: 200px;
     background: #fff;
-
-    @include border-style(solid);
-    @include border-color($base-border-color);
-    @include border-width(0 1px 0 0);
 
     -moz-transition: left 0.1s ease-in-out;
     -o-transition: left 0.1s ease-in-out;

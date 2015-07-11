@@ -5,6 +5,30 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+<?php // Check for Feature Image
+
+	if ( has_post_thumbnail() ) :
+
+	$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
+
+?>
+	<header class="entry-header has-feature-image" <?php echo 'style="background-image:url('.$large_image_url[0].');"';?>>
+
+		<?php if(get_field('event_theme')) : ?>
+		<h2 class="event-theme"><?php the_field('event_theme'); ?></h2>
+		<?php endif; /* Event Theme // ACF */ ?>
+
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+
+		<div class="entry-meta">
+			<?php icsd_acf_events_date_range(); ?>
+		</div><!-- .entry-meta -->
+
+	</header>
+
+<?php else : ?>
+
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
@@ -16,6 +40,8 @@
 			<?php icsd_acf_events_date_range(); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
+
+<?php endif; // entry header ?>
 
 	<div class="entry-content">
 		<?php the_content(); ?>
@@ -55,7 +81,9 @@
 
 	if( $agenda_object ): ?>
 
-	<div class="agenda">
+	<div class="agenda" id="agenda">
+
+	<h2>Agenda</h2>
 
 	<ol class="sessions">
 
@@ -188,7 +216,7 @@
 
 
 	<?php $location = get_field('event_location_map'); ?>
-	<?php if( !empty($location) && !is_front_page() ): ?>
+	<?php if( !empty($location) ): ?>
 	<div class="location">
 		<h2>Location</h2>
 		<div class="event-map">
