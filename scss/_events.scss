@@ -1,56 +1,27 @@
-// Primary Grid/Layout Settings
+/**
+ * EVENTS
+ *
+ *
+ * 1. EVENTS (SINGLE)
+ * 2. EVENTS (ARCHIVE)
+ *
+ * Type sizes based on: http://www.modularscale.com/?1&em&1.25&web&text 
+ */
 
-.site {
-  width: 100%;
-}
-
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100px;
-  background-color: rgba(0,0,0,.5);
-  z-index: 999999;
-}
-
-.site-branding {
-  height: 99px;
-  line-height: 50px;
-  position: absolute;
-  left: 77px;
-  width: auto;
-  overflow: auto;
-  @include pad(1em 0 0 1em);
-
-}
-
-.site-content,
-.content-area,
-.site-main {
-  margin: 0;
-  width: 100%;
-}
-
-.site-footer {
-  @include span-columns(12 of 12);
-}
-
-// Posts & Pages Grid/Layout
-article.page, article.post {
-
-  @include span-columns(10 of 12);
-  @include shift(1);
-
-  @include media($large-screen) {
-    @include span-columns(8 of 12);
-    @include shift(2);
-  }
-}
 article.events {
-  //@include span-columns(10 of 12);
-  //@include shift(1);
+
   @include outer-container(100%);
+
+  .entry-content {
+    @include span-columns(10 of 12);
+    @include shift(1);
+
+    @include media($large-screen){
+      @include span-columns(6 of 12);
+      @include shift(3);
+      @include pad(2em 0 0 0);
+    }
+  }
 
   .entry-header {
 
@@ -61,6 +32,7 @@ article.events {
     background-position: centered;
     background-repeat: no-repeat;
     padding-top: 200px;
+    padding-bottom: 25px;
     min-height: 600px;
 
     .entry-title,
@@ -68,10 +40,13 @@ article.events {
     .entry-meta {
       text-align: center;
       color: #fff;
+      text-shadow: rgba(4,6,129, .4) 2px 2px 20px; 
     }
+
 
     .event-theme {
       font-size: 3vh;
+      font-weight: 300;
     }
 
     .entry-title {
@@ -79,41 +54,19 @@ article.events {
 
       font-size: 8vh;
       font-weight: 300;
-      text-shadow: rgba(0,0,0, .5) 1px 0 45px; 
+      
       text-transform: uppercase;
       margin-right: auto;
       margin-left: auto;
       max-width: 80%;
     }
 
-  }
+    .entry-meta {
+    }
 
-  .entry-content{
-    @include span-columns(10 of 12);
-  }
-
-  .entry-footer {
-    @include span-columns(12);
-  }
-
-}
-
-.page-header {
-  @include span-columns(10 of 12);
-  @include shift(1);
-
-  @include media($large-screen) {
-    @include span-columns(8 of 12);
-    @include shift(2);
   }
 }
 
-.post-type-archive-events {
-  .page-header {
-    @include span-columns(10 of 12);
-    @include shift(1);
-  }
-}
 
 // Agenda
 
@@ -185,7 +138,14 @@ article.events {
   @include span-columns(10 of 12);
 
   @include media($large-screen) {
-    @include span-columns(8 of 12);
-    @include shift(2);
+    @include span-columns(6 of 12);
+    @include shift(3);
+  }
+}
+
+.post-type-archive-events {
+  .page-header {
+    @include span-columns(10 of 12);
+    @include shift(1);
   }
 }
