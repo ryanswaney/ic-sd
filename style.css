@@ -409,6 +409,15 @@ html {
     content: "";
     display: table; }
 
+.archive .site-content,
+.blog .site-content,
+.page .site-content,
+.single-post .site-content {
+  margin-top: 140px; }
+
+.home.page .site-content {
+  margin-top: 0; }
+
 .site-footer {
   float: left;
   display: block;
@@ -445,72 +454,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
   margin: 0;
   padding: 0.5em 0; }
-
-.site-title {
-  line-height: 1.2;
-  font-size: 1em;
-  text-transform: uppercase;
-  max-width: 85%; }
-  .site-title a {
-    color: #fff;
-    display: block; }
-  @media screen and (min-width: 53.75em) {
-    .site-title {
-      max-width: 60%; } }
-  .site-title a {
-    text-decoration: none; }
-
-.entry-title {
-  border-color: #ccc;
-  border-width: 0 0 2px;
-  border-style: solid;
-  padding: 0 0 1rem 0; }
-
-.entry-content h1, .entry-content h2 {
-  font-size: 1.563em; }
-.entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
-  font-size: 1.25em; }
-.entry-content p, .entry-content li {
-  font-size: 1.25em; }
-.entry-content a {
-  color: #40b4e4;
-  text-decoration: none;
-  border-style: solid;
-  border-width: 0 0 1px;
-  border-color: #40b4e4; }
-  .entry-content a:hover, .entry-content a:focus {
-    color: #146c90; }
-
-.event-theme {
-  font-family: "adobe-caslon-pro", "Adobe Caslon Pro", serif;
-  font-size: 1em;
-  font-style: italic;
-  font-weight: 400; }
-
-.speaker-list {
-  list-style: none;
-  padding: 0; }
-
-.speaker-name {
-  font-size: 1.5em; }
-
-.speaker-title {
-  font-size: 1em;
-  font-family: "adobe-caslon-pro", "Adobe Caslon Pro", serif;
-  font-weight: 400;
-  margin: 0 auto auto; }
-
-.sessions {
-  list-style: none;
-  padding: 0; }
-
-.session-extended ol {
-  padding: 0;
-  list-style-position: inside; }
-
-.event-description h2 {
-  font-size: 1em;
-  margin-top: 0; }
 
 :target:before {
   content: "";
@@ -577,6 +520,20 @@ h1, h2, h3, h4, h5, h6 {
   border-color: #ccc;
   border-style: solid; }
 
+.site-title {
+  line-height: 1.2;
+  font-size: 1em;
+  text-transform: uppercase;
+  max-width: 85%; }
+  .site-title a {
+    color: #fff;
+    display: block; }
+  @media screen and (min-width: 53.75em) {
+    .site-title {
+      max-width: 60%; } }
+  .site-title a {
+    text-decoration: none; }
+
 article.page, article.post {
   float: left;
   display: block;
@@ -594,6 +551,24 @@ article.page, article.post {
       margin-left: 17.05961%; }
       article.page:last-child, article.post:last-child {
         margin-right: 0; } }
+
+.entry-title {
+  padding: 0 0 1rem 0; }
+
+.entry-content h1, .entry-content h2 {
+  font-size: 1.563em; }
+.entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
+  font-size: 1.25em; }
+.entry-content p, .entry-content li {
+  font-size: 1.25em; }
+.entry-content a {
+  color: #40b4e4;
+  text-decoration: none;
+  border-style: solid;
+  border-width: 0 0 1px;
+  border-color: #40b4e4; }
+  .entry-content a:hover, .entry-content a:focus {
+    color: #146c90; }
 
 .entry-content {
   float: left;
@@ -646,13 +621,33 @@ article.events {
         padding: 2em 0 0 0; }
         article.events .entry-content:last-child {
           margin-right: 0; } }
+  article.events .entry-header {
+    background: linear-gradient(270deg, #22cfa2, #227dcf);
+    background-size: 400% 400%;
+    padding: 140px 25px 50px 25px; }
+    article.events .entry-header .event-theme {
+      font-family: "adobe-caslon-pro", "Adobe Caslon Pro", serif;
+      font-size: 1em;
+      font-style: italic;
+      font-weight: 400; }
+  article.events .event-call-to-action {
+    margin-top: 1em;
+    text-align: center; }
+    article.events .event-call-to-action a {
+      border: 4px solid gold;
+      color: #fff;
+      display: inline-block;
+      font-family: "futura-pt", "Futura PT", sans-serif;
+      font-size: 1.5em;
+      padding: .25em .5em;
+      text-decoration: none;
+      text-transform: uppercase; }
   article.events .entry-header.has-feature-image {
     background-size: cover;
     background-position: centered;
     background-repeat: no-repeat;
-    padding-top: 200px;
-    padding-bottom: 25px;
-    min-height: 600px; }
+    padding-top: 140px;
+    padding-bottom: 50px; }
     article.events .entry-header.has-feature-image .entry-title,
     article.events .entry-header.has-feature-image .event-theme,
     article.events .entry-header.has-feature-image .entry-meta {
@@ -660,16 +655,27 @@ article.events {
       color: #fff;
       text-shadow: rgba(4, 6, 129, 0.4) 2px 2px 20px; }
     article.events .entry-header.has-feature-image .event-theme {
-      font-size: 3vh;
+      font-size: 1.5em;
+      font-size: 3.5vw;
       font-weight: 300; }
+      @media screen and (min-width: 53.75em) {
+        article.events .entry-header.has-feature-image .event-theme {
+          font-size: 1.5vw; } }
     article.events .entry-header.has-feature-image .entry-title {
       border: 0;
-      font-size: 8vh;
+      font-size: 4vw;
       font-weight: 300;
       text-transform: uppercase;
       margin-right: auto;
       margin-left: auto;
-      max-width: 80%; }
+      max-width: 90%; }
+    article.events .entry-header.has-feature-image .entry-meta {
+      font-size: 1.5em;
+      font-size: 3.5vw; }
+      @media screen and (min-width: 53.75em) {
+        article.events .entry-header.has-feature-image .entry-meta {
+          font-size: 2em;
+          font-size: 1.5vw; } }
 
 .agenda {
   float: left;
@@ -777,5 +783,30 @@ article.events {
   margin-left: 8.5298%; }
   .post-type-archive-events .page-header:last-child {
     margin-right: 0; }
+
+.speaker-list {
+  list-style: none;
+  padding: 0; }
+
+.speaker-name {
+  font-size: 1.5em; }
+
+.speaker-title {
+  font-size: 1em;
+  font-family: "adobe-caslon-pro", "Adobe Caslon Pro", serif;
+  font-weight: 400;
+  margin: 0 auto auto; }
+
+.sessions {
+  list-style: none;
+  padding: 0; }
+
+.session-extended ol {
+  padding: 0;
+  list-style-position: inside; }
+
+.event-description h2 {
+  font-size: 1em;
+  margin-top: 0; }
 
 /*# sourceMappingURL=style.css.map */

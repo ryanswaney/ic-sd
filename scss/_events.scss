@@ -25,15 +25,47 @@ article.events {
 
   .entry-header {
 
+    background: linear-gradient(270deg, #22cfa2, #227dcf);
+    background-size: 400% 400%;
+
+    padding: 140px 25px 50px 25px;
+
+
+    .event-theme {
+      font-family: $base-font-family;
+      font-size: $base-font-size;
+      font-style: italic;
+      font-weight: 400;
+    }
+
   }
+
+  .event-call-to-action {
+    margin-top: 1em;
+    text-align: center;
+
+    a {
+      
+      border: 4px solid gold;
+      color: #fff;
+      display: inline-block;
+      font-family: $navigation-font-family;
+      font-size: 1.5em;
+      padding: .25em .5em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+  }
+
 
   .entry-header.has-feature-image {
     background-size: cover;
     background-position: centered;
     background-repeat: no-repeat;
-    padding-top: 200px;
-    padding-bottom: 25px;
-    min-height: 600px;
+    padding-top: 140px;
+    padding-bottom: 50px;
+    //min-height: 600px;
 
     .entry-title,
     .event-theme,
@@ -45,23 +77,36 @@ article.events {
 
 
     .event-theme {
-      font-size: 3vh;
+      font-size: 1.5em;
+      font-size: 3.5vw;
       font-weight: 300;
+
+      @include media($large-screen) {
+        font-size: 1.5vw;
+      }
     }
 
     .entry-title {
       border: 0;
 
-      font-size: 8vh;
+      font-size: 4vw;
       font-weight: 300;
       
       text-transform: uppercase;
       margin-right: auto;
       margin-left: auto;
-      max-width: 80%;
+      max-width: 90%;
     }
 
     .entry-meta {
+
+      font-size: 1.5em;
+      font-size: 3.5vw;
+
+      @include media($large-screen){
+        font-size: 2em;
+        font-size: 1.5vw
+      }
     }
 
   }
@@ -147,5 +192,43 @@ article.events {
   .page-header {
     @include span-columns(10 of 12);
     @include shift(1);
+  }
+}
+
+
+// Speakers
+.speaker-list {
+  list-style: none;
+  @include pad(0);
+}
+
+.speaker-name {
+  font-size: 1.5em;
+}
+.speaker-title {
+  font-size: $base-font-size;
+  font-family: $base-font-family;
+  font-weight: 400;
+  @include margin(0 auto auto auto);
+}
+
+// Agenda
+
+.sessions {
+  list-style: none;
+  @include pad(0);
+}
+
+.session-extended {
+  ol {
+    padding: 0;
+    list-style-position: inside;
+  }
+}
+
+.event-description {
+  h2 { 
+    font-size: $base-font-size;
+    margin-top: 0;
   }
 }

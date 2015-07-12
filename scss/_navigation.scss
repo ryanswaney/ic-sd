@@ -93,3 +93,25 @@
 
   }
 }
+
+.site-title {
+  line-height: 1.2;
+  font-size: 1em;
+  text-transform: uppercase;
+
+  max-width: 85%;
+
+  a {
+    color: #fff;
+    display: block;
+  }
+
+  @include media($large-screen) {
+    max-width: 60%;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+}

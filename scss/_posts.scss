@@ -10,6 +10,38 @@ article.page, article.post {
   }
 }
 
+.entry-title {
+  @include pad(0 0 1rem 0);
+}
+
+.entry-content {
+
+  h1, h2 {
+    font-size: 1.563em;
+  }
+
+  h3, h4, h5, h6 {
+    font-size: 1.25em;
+  }
+
+  p, li {
+    font-size: 1.25em;
+  }
+
+  a {
+    color: $action-color;
+    text-decoration: none;
+    @include border-style(solid);
+    @include border-width(0 0 1px 0);
+    @include border-color($action-color);
+
+    &:hover, &:focus {
+      color: darken($action-color, 25%);
+    }
+  }
+
+}
+
 .entry-content{
     @include span-columns(10 of 12);
 }

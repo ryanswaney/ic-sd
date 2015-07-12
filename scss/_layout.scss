@@ -31,12 +31,24 @@
   @include outer-container(100%);
 }
 
+.archive,
+.blog,
+.page,
+.single-post {
+  .site-content {
+    margin-top: 140px;
+  }
+}
+
+.home.page {
+  .site-content {
+    margin-top: 0;
+  }
+}
+
 .site-footer {
   @include span-columns(12 of 12);
 }
-
-
-
 
 .page-header {
   @include span-columns(10 of 12);

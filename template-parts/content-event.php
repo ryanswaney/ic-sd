@@ -1,5 +1,9 @@
 <?php
 /**
+ * Content -- Event
+ *
+ * Template (partial) used for displaying an individual event post.
+ *
  * @package icsd
  */
 ?>
@@ -25,20 +29,34 @@
 			<?php icsd_acf_events_date_range(); ?>
 		</div><!-- .entry-meta -->
 
+		<?php if ( get_field('event_registration_url') ): ?>
+		<div class="event-call-to-action">
+			<a href="<?php echo esc_url( the_field('event_registration_url') ); ?>" title="Register">Register</a>
+		</div>
+		<?php endif; // call to action ?>
+
 	</header>
 
-<?php else : ?>
+<?php else : // no feature image ?>
 
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 		<?php if(get_field('event_theme')) : ?>
 		<h2 class="event-theme"><?php the_field('event_theme'); ?></h2>
 		<?php endif; /* Event Theme // ACF */ ?>
 
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+
 		<div class="entry-meta">
 			<?php icsd_acf_events_date_range(); ?>
 		</div><!-- .entry-meta -->
+
+		<?php if ( get_field('event_registration_url') ): ?>
+		<div class="event-call-to-action">
+			<?php echo esc_url( the_field('event_registration_url') ); ?>
+		</div>
+		<?php endif; // call to action ?>
+
 	</header><!-- .entry-header -->
 
 <?php endif; // entry header ?>
@@ -127,7 +145,7 @@
 						<ol>
 						<?php while ( have_rows('d1_ps_list') ) : the_row(); ?>
 							<li>
-								<h3><?php the_sub_field('d1_ps_title' ); ?></h3>
+								<h3><?php the_sub_field('d1_psl_title' ); ?></h3>
 								<div class="sub-session-desc">
 								<?php the_sub_field('d1_ps_desc'); ?>
 								</div>
@@ -187,7 +205,7 @@
 						<ol>
 						<?php while ( have_rows('d2_ps_list') ) : the_row(); ?>
 							<li>
-								<h3><?php the_sub_field('d2_ps_title' ); ?></h3>
+								<h3><?php the_sub_field('d2_psl_title' ); ?></h3>
 								<div class="sub-session-desc">
 								<?php the_sub_field('d2_ps_desc'); ?>
 								</div>
@@ -209,8 +227,6 @@
 	</ol> <!-- // Sessions -->
 
 	</div>
-  
-  <?php //wp_reset_postdata(); // Reset the $post object so the rest of the page works correctly ?>
 
 	<?php endif; ?>
 
@@ -223,15 +239,20 @@
 			<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
 		</div>
 
-		<div class="event-dining">
-			<h3>Dining</h3>
-			<?php the_field('event_dining'); ?>
-		</div>
 
-		<div class="event-accommodations">
-			<h3>Accommodations</h3>
-			<?php the_field('event_accommodations'); ?>
-		</div>
+	<?php if ( get_field('event_dining') ): ?>
+	<div class="event-dining">
+		<h3>Dining</h3>
+		<?php the_field('event_dining'); ?>
+	</div>
+	<?php endif; // event dining ?>
+
+	<?php if( get_field('event_accommodations') ): ?>
+	<div class="event-accommodations">
+		<h3>Accommodations</h3>
+		<?php the_field('event_accommodations'); ?>
+	</div>
+	<?php endif; // event accommodations ?>
 
 	</div>
 	<?php endif; ?>
