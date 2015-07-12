@@ -1,0 +1,49 @@
+// Primary Grid/Layout Settings
+
+.site {
+  width: 100%;
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background-color: rgba(0,0,0,.5);
+  z-index: 999999;
+}
+
+.site-branding {
+  height: 99px;
+  line-height: 50px;
+  position: absolute;
+  left: 77px;
+  width: auto;
+  overflow: auto;
+  @include pad(1em 0 0 1em);
+
+}
+
+.site-content,
+.content-area,
+.site-main {
+  @include outer-container(100%);
+}
+
+.site-footer {
+  @include span-columns(12 of 12);
+}
+
+
+
+
+.page-header {
+  @include span-columns(10 of 12);
+  @include shift(1);
+
+  @include media($large-screen) {
+    @include span-columns(8 of 12);
+    @include shift(2);
+  }
+}
