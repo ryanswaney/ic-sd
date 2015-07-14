@@ -16,6 +16,10 @@ article.post, article.page {
   }
 }
 
+article.post {
+  margin-bottom: 2em;
+}
+
 .entry-content{
     @include span-columns(10 of 12);
     @include shift(1);
@@ -28,6 +32,21 @@ article.post, article.page {
 
 .entry-title {
   @include pad(0 0 1rem 0);
+
+  a {
+    color: $action-color;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+.posted-on {
+  a { color: $action-color;
+    text-decoration: none;}
 }
 
 // Post/Page typography
@@ -49,12 +68,10 @@ article.post, article.page {
   a {
     color: $action-color;
     text-decoration: none;
-    @include border-style(solid);
-    @include border-width(0 0 1px 0);
-    @include border-color($action-color);
 
     &:hover, &:focus {
-      color: darken($action-color, 25%);
+      //color: darken($action-color, 25%);
+      text-decoration: underline;
     }
   }
 

@@ -9,13 +9,16 @@
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 		<?php if(get_field('event_theme')) : ?>
 			<h2 class="event-theme"><?php the_field('event_theme'); ?></h2>
-		<?php endif; /* Event Theme // ACF */ ?>
 
-		<?php icsd_acf_events_date_range(); ?>
+		<?php endif; /* Event Theme // ACF */ ?>
+		
+		<h3 class="event-location"><?php icsd_acf_events_date_range(); ?> | <?php the_field('event_location_text'); ?></h3>
+
+		
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<h3 class="event-location"><?php the_field('event_location_text'); ?></h3>
+		
 		<?php
 			/* translators: %s: Name of current post */
 			the_excerpt( sprintf(
