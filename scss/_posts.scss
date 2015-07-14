@@ -9,7 +9,7 @@ article.page, article.post {
   }
 }
 
-.post {
+article.post, article.page {
   .entry-header {
     @include span-columns(10 of 12);
     @include shift(1);
@@ -22,7 +22,8 @@ article.page, article.post {
 }
 
 .entry-footer {
-    @include span-columns(12);
+    @include span-columns(10 of 12);
+    @include shift(1);
 }
 
 .entry-title {

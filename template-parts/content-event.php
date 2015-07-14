@@ -105,7 +105,7 @@
 
 	<div class="agenda" id="agenda">
 
-	<h2>Agenda</h2>
+	<h2 class="agenda-title">Agenda</h2>
 
 	<ol class="sessions">
 

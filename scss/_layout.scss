@@ -35,6 +35,10 @@ body {
   @include outer-container(100%);
 }
 
+.site-main {
+  padding-bottom: 4em;
+}
+
 .archive,
 .blog,
 .page,
@@ -51,9 +55,6 @@ body {
   }
 }
 
-.site-footer {
-  @include span-columns(12 of 12);
-}
 
 .page-header {
   @include span-columns(10 of 12);
@@ -63,4 +64,17 @@ body {
     @include span-columns(8 of 12);
     @include shift(2);
   }
+}
+
+// Footer Grid
+.site-footer {
+  @include outer-container(100%);
+  background: linear-gradient(217deg, #4ab175, #227dcf);
+  padding-top: 3em;
+  padding-bottom: 3em;
+
+}
+.site-info {
+  @include span-columns(10 of 12);
+  @include shift(1);
 }

@@ -119,7 +119,7 @@
   font-size: 1em;
   text-transform: uppercase;
 
-  max-width: 85%;
+  max-width: 90%;
 
   a {
     color: #fff;
@@ -128,10 +128,65 @@
 
   @include media($large-screen) {
     max-width: 60%;
+    font-size: 1.25em;
   }
 
   a {
     text-decoration: none;
   }
+
+}
+
+// Footer Menus
+.footer-menu-wrap {
+  @include span-columns(12 of 12);
+
+  @include media($large-screen) {
+    @include span-columns(3 of 12);
+  }
+
+  h4 {
+    color: #fff;
+    font-size: 1.25em;
+    font-weight: 700;
+    //text-transform: uppercase;
+  }
+
+  .footer-menu {
+    list-style: none;
+    margin-top: 0;
+    padding: 0;
+
+    li {
+      font-size: 95%;
+
+      a {
+        border: none;
+        color: #fff;
+        font-family: $base-font-family;
+        font-weight: 400;
+        padding: 0 0 1em 0;
+        text-transform: none;
+
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+}
+
+// WordPress Edit Link
+.post-edit-link {
+  background: #227dcf;
+  color: #fff;
+  display: inline-block;
+  font-family: $navigation-font-family;
+  font-size: 0.8em;
+  padding: .25em 1.5em;
+  text-decoration: none;
+  text-transform: uppercase;
 
 }

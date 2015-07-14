@@ -21,10 +21,26 @@ $base-z-index: 0;
 $base-font-color: #333;
 $highlight-color: #f99d1c;
 $base-border-color: #ccc;
-$action-color: #40b4e4;
+$action-color: #227dcf;
 
 $top-bar-bg-color: #f2c70f;
 
 // Screen Sizing
 $medium-screen: em(640) !default;
 $large-screen: em(860) !default;
+
+// http://www.modularscale.com/?1&em&1.25&web&text
+
+body {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font-family;
+  line-height: $heading-line-height;
+  margin: 0;
+  @include pad(.5em 0);
+  
+}

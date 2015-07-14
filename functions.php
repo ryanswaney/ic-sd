@@ -44,7 +44,9 @@ function icsd_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary Menu', 'icsd' ),
-		'social' => esc_html__( 'Social Media', 'icsd' )
+		'social' => esc_html__( 'Social Media', 'icsd' ),
+		'footer-1' => esc_html__( 'Footer (1) Menu', 'icsd' ),
+		'footer-2' => esc_html__( 'Footer (2) Menu', 'icsd' )
 	) );
 
 	/*
@@ -83,26 +85,6 @@ function icsd_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'icsd_content_width', 640 );
 }
 add_action( 'after_setup_theme', 'icsd_content_width', 0 );
-
-/**
- * Register widget area.
- *
- * @link http://codex.wordpress.org/Function_Reference/register_sidebar
- */
-/*
-function icsd_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'icsd' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-}
-add_action( 'widgets_init', 'icsd_widgets_init' );
-*/
 
 /**
  * Enqueue scripts and styles.
