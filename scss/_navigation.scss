@@ -79,6 +79,7 @@
 
   a {
     @include pad(1em);
+    color: lighten(#000, 20%);
     display: block;
 
     font-family: $navigation-font-family;;
@@ -90,6 +91,25 @@
     @include border-width(0 0 1px 0);
     @include border-color($base-border-color);
     @include border-style(solid);
+
+    &:hover,
+    &:focus {
+      color: $action-color; //lighten(#000, 40%);
+    }
+
+  }
+}
+
+.sub-menu {
+  list-style: none;
+  padding: 0px;
+
+  .menu-item {
+    font-size: 80%;
+
+    a {
+      padding-left: 2.5em;
+    }
 
   }
 }

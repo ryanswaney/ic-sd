@@ -1,8 +1,7 @@
 // Posts & Pages Grid/Layout
 article.page, article.post {
 
-  @include span-columns(10 of 12);
-  @include shift(1);
+  @include span-columns(12 of 12);
 
   @include media($large-screen) {
     @include span-columns(8 of 12);
@@ -10,9 +9,27 @@ article.page, article.post {
   }
 }
 
+.post {
+  .entry-header {
+    @include span-columns(10 of 12);
+    @include shift(1);
+  }
+}
+
+.entry-content{
+    @include span-columns(10 of 12);
+    @include shift(1);
+}
+
+.entry-footer {
+    @include span-columns(12);
+}
+
 .entry-title {
   @include pad(0 0 1rem 0);
 }
+
+// Post/Page typography
 
 .entry-content {
 
@@ -42,10 +59,21 @@ article.page, article.post {
 
 }
 
-.entry-content{
-    @include span-columns(10 of 12);
-}
+// Misc WordPress styles from the WPEditor
+.aligncenter,
+.alignleft {
+  width: auto;
+  margin: auto 1em 1em 1em;
 
-.entry-footer {
-    @include span-columns(12);
+  @include media($large-screen) {
+    float: left;
+    margin: auto 2em 1.5em 0;
+  }
+}
+.alignright {
+
+    @include media($large-screen) {
+    float: right;
+    margin: auto 0 1.5em 1.5em;
+  }
 }

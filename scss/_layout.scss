@@ -1,5 +1,9 @@
 // Primary Grid/Layout Settings
 
+body {
+  background: #fff;
+}
+
 .site {
   width: 100%;
 }
@@ -36,6 +40,7 @@
 .page,
 .single-post {
   .site-content {
+    background-color: #fff;
     margin-top: 140px;
   }
 }

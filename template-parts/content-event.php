@@ -17,7 +17,10 @@
 	$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 
 ?>
-	<header class="entry-header has-feature-image" <?php echo 'style="background-image:url('.$large_image_url[0].');"';?>>
+	<header class="entry-header has-feature-image" <?php echo 'style="background-image: linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2) ),
+      url('.$large_image_url[0].');"'; ?>>
 
 		<?php if(get_field('event_theme')) : ?>
 		<h2 class="event-theme"><?php the_field('event_theme'); ?></h2>
@@ -26,7 +29,8 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 		<div class="entry-meta">
-			<?php icsd_acf_events_date_range(); ?>
+			<h4 class="event-date"><?php icsd_acf_events_date_range(); ?></h4>
+			<h4 class="event-location"><?php the_field('event_location_text'); ?></h4>
 		</div><!-- .entry-meta -->
 
 		<?php if ( get_field('event_registration_url') ): ?>
