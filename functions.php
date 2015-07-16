@@ -128,6 +128,11 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/acf-extras.php';
 
 /**
+ * Shortcodes
+**/
+require get_template_directory() . '/inc/shortcodes.php';
+
+/**
  * Custom Post Type for Events
  */
 require get_template_directory() . '/inc/cpt-events.php';

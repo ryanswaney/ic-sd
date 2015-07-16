@@ -71,23 +71,41 @@
 
 	<?php if( have_rows('speaker') ): ?>
 	<div class="speakers">
-		<h2 id="speakers">Keynote Speakers</h2>
+		<h2 id="speakers">Featured Speakers</h2>
 		<ul class="speaker-list">
 		<?php while ( have_rows('speaker') ) : the_row(); ?>
 
 			<?php if( get_row_layout() == 'speaker_details' ): ?>
 				<li>
+					<div class="speaker-header">
+					<?php if (get_sub_field('speaker_photo') ): ?>
+						<?php
+							$image = get_sub_field('speaker_photo');
+
+							$size = 'thumbnail';
+							$thumb = $image['sizes'][ $size ];
+						?>
+
+							<img src="<?php echo $thumb; ?>" class="speaker-photo" />
+
+					<? endif; /* Event -- Speaker Photos // ACF // */ ?>
+					
+					<div>
 					<?php if ( get_sub_field('speaker_name') ) : ?>
-					<h3 class="speaker-name"><?php the_sub_field('speaker_name'); /* Event -- Speaker Name // ACF */ ?></h2>
+						<h3 class="speaker-name"><?php the_sub_field('speaker_name'); /* Event -- Speaker Name // ACF */ ?></h3>
 					<?php endif; ?>
+					
 					<?php if ( get_sub_field('speaker_title') ): ?>
-					<h4 class="speaker-title"><?php the_sub_field('speaker_title'); /* Event -- Speaker Title // ACF */ ?></h4>
-					<?php endif; ?>
-					<?php if ( get_sub_field('speaker_bio') ): ?>
-					<div class="speaker-bio">
-					<?php the_sub_field('speaker_bio'); /* Event -- Speaker Bio // ACF */ ?>
+						<h4 class="speaker-title"><?php the_sub_field('speaker_title'); /* Event -- Speaker Title // ACF */ ?></h4>
 					<?php endif; ?>
 					</div>
+					</div><!-- Speaker Header -->
+					
+					<?php if ( get_sub_field('speaker_bio') ): ?>
+						<div class="speaker-bio">
+							<?php the_sub_field('speaker_bio'); /* Event -- Speaker Bio // ACF */ ?>
+						</div>
+					<?php endif; ?>
 				</li>
 			<?php endif; ?>
 
@@ -238,7 +256,7 @@
 	<?php $location = get_field('event_location_map'); ?>
 	<?php if( !empty($location) ): ?>
 	<div class="location">
-		<h2>Location</h2>
+		<h2 id="location">Location</h2>
 		<div class="event-map">
 			<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
 		</div>
