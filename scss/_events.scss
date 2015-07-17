@@ -241,6 +241,17 @@ article.events {
   }
 }
 
+.speaker-header {
+  @include outer-container;
+
+  .speaker-photo {
+    @include span-columns(3);
+  }
+  div {
+    @include span-columns(9);
+  }
+}
+
 .speaker-list {
   list-style: none;
   @include pad(0);
@@ -269,18 +280,17 @@ article.events {
   font-weight: 400;
   line-height: 1.4;
   padding-top: 0;
+
+  @include media($large-screen) {
+    font-size: 1.15em;
+  }
+
 }
 
-.speaker-header {
-  @include outer-container;
-
-  .speaker-photo {
-    @include span-columns(3);
-  }
-  div {
-    @include span-columns(9);
-  }
+.speaker-bio {
+  font-size: 1em;
 }
+
 
 // Events archive
 .post-type-archive-events {
