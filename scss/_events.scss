@@ -150,11 +150,11 @@ article.events {
 
 .sessions {
 
-  li:nth-child(odd) {
+  li.single-session:nth-child(odd) {
     background-color: lighten($action-color, 50%);
   }
 
-  li:nth-child(1) {
+  li.single-session:nth-child(1) {
     background-color: lighten($action-color, 35%);
   }
 
@@ -209,9 +209,6 @@ article.events {
     list-style: none;
     list-style-position: inside;
 
-    li,
-    li:nth-child(1),
-    li:nth-child(odd) { background-color: none; }
   }
 
   
@@ -224,11 +221,6 @@ article.events {
   }
 }
 
-.sub-session-details {
-
-  li { background-color: none; }
-
-}
 
 
 // Location + Google Map
