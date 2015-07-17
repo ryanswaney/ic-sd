@@ -239,6 +239,16 @@ article.events {
     @include span-columns(6 of 12);
     @include shift(3);
   }
+
+  h2 { vertical-align: baseline; }
+
+  span.more {
+    color: $action-color;
+    display: inline-block;
+    font-size: 1em;
+    text-transform: uppercase;
+  }
+
 }
 
 .speaker-header {
@@ -290,6 +300,13 @@ article.events {
 
 .speaker-bio {
   font-size: 1em;
+  display: none;
+}
+
+.speaker-list.toggled {
+  .speaker-bio {
+    display: block;
+  }
 }
 
 
