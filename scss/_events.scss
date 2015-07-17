@@ -206,10 +206,12 @@ article.events {
 
   ol {
     padding: 0;
+    list-style: none;
     list-style-position: inside;
+    li { background-color: none; }
   }
 
-  li { background-color: none; }
+  
 }
 
 .event-description {
@@ -217,6 +219,12 @@ article.events {
     font-size: $base-font-size;
     margin-top: 0;
   }
+}
+
+.sub-session-details {
+
+  li { background-color: none; }
+
 }
 
 
