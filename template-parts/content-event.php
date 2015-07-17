@@ -71,7 +71,7 @@
 
 	<?php if( have_rows('speaker') ): ?>
 	<div class="speakers">
-		<h2 id="speakers">Featured Speakers</h2>
+		<h2 id="speakers">Featured Speakers <span class="more">Expand All</span></h2>
 		<ul class="speaker-list">
 		<?php while ( have_rows('speaker') ) : the_row(); ?>
 

@@ -243,6 +243,7 @@ article.events {
 
 .speaker-header {
   @include outer-container;
+  margin-bottom: 1em;
 
   .speaker-photo {
     @include span-columns(3);

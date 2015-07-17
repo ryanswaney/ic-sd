@@ -95,13 +95,17 @@ a.button {
   -webkit-transition: padding .1s ease;
   -moz-transition: padding .1s ease ;
   transition: padding .1s ease;
-  width: 50%;
+  width: 90%;
 
   &:hover,
   &:focus {
     border-color: lighten(gold, 30%);
     padding: .25em 2em;
     text-decoration: none;
+  }
+
+  @include media($large-screen) {
+    width: 50%;
   }
 }
 
