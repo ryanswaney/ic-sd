@@ -150,12 +150,12 @@ article.events {
 
 .sessions {
 
-  li:nth-child(1) {
-    background-color: lighten($action-color, 35%);
-  }
-
   li:nth-child(odd) {
     background-color: lighten($action-color, 50%);
+  }
+
+  li:nth-child(1) {
+    background-color: lighten($action-color, 35%);
   }
 
 }
@@ -163,9 +163,6 @@ article.events {
 .single-session {
 
   @include outer-container;
-  //@include border-color($base-border-color);
-  //@include border-width(0 0 1px 0);
-  //@include border-style(solid);
   @include pad(1em);
 
   time {
@@ -255,6 +252,7 @@ article.events {
     &:before {
       content: " ";
       border-left: 2px solid $action-color;
+      padding-right: .5em;
 
     }
 

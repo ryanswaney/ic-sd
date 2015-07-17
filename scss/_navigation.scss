@@ -116,7 +116,7 @@
 
 .site-title {
   line-height: 1.2;
-  font-size: 1em;
+  font-size: .8em;
   text-transform: uppercase;
 
   max-width: 90%;
@@ -126,7 +126,7 @@
     display: block;
   }
 
-  @include media($large-screen) {
+  @include media($medium-screen) {
     max-width: 60%;
     font-size: 1.25em;
   }
