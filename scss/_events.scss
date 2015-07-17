@@ -208,7 +208,10 @@ article.events {
     padding: 0;
     list-style: none;
     list-style-position: inside;
-    li { background-color: none; }
+
+    li,
+    li:nth-child(1),
+    li:nth-child(odd) { background-color: none; }
   }
 
   
