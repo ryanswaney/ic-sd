@@ -240,13 +240,23 @@ article.events {
     @include shift(3);
   }
 
-  h2 { vertical-align: baseline; }
-
   span.more {
     color: $action-color;
+    cursor: pointer;
     display: inline-block;
-    font-size: 1em;
+    font-size: .5em;
     text-transform: uppercase;
+    vertical-align: middle;
+
+    &:before {
+      content: " | ";
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+
   }
 
 }
