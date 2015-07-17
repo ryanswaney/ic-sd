@@ -125,9 +125,11 @@
 
 	<h2 class="agenda-title">Agenda</h2>
 
-	<ol class="sessions">
+	
 
 	<?php if( have_rows('session_group_1', $agenda_object->ID) ): ?>
+
+		<ol class="sessions">
 
 		<?php while ( have_rows('session_group_1', $agenda_object->ID) ) : the_row(); ?>
 
@@ -184,9 +186,13 @@
 
 		<?php endwhile; ?>
 
+		</ol>
+
 	<?php endif; // Day 1 Sessions ?>
 
 	<?php if( have_rows('session_group_2', $agenda_object->ID) ): ?>
+
+		<ol class="sessions">
 
 		<?php while ( have_rows('session_group_2', $agenda_object->ID) ) : the_row(); ?>
 
@@ -244,9 +250,9 @@
 
 		<?php endwhile; ?>
 
-	<?php endif; // Day 2 Sessions ?>
+		</ol> <!-- // Sessions -->
 
-	</ol> <!-- // Sessions -->
+	<?php endif; // Day 2 Sessions ?>
 
 	</div>
 

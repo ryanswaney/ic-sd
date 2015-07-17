@@ -150,6 +150,10 @@ article.events {
 
 .sessions {
 
+  li:nth-child(1) {
+    background-color: lighten($action-color, 35%);
+  }
+
   li:nth-child(odd) {
     background-color: lighten($action-color, 50%);
   }
@@ -249,7 +253,9 @@ article.events {
     vertical-align: middle;
 
     &:before {
-      content: " | ";
+      content: " ";
+      border-left: 2px solid $action-color;
+
     }
 
     &:hover,
