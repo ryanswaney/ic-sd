@@ -1,0 +1,16 @@
+#mc_embed_signup {
+  @include outer-container();
+
+  form {
+    @include span-columns(12);
+
+    @include media($large-screen) {
+      @include span-columns(8 of 12);
+    }
+  }
+
+  div.mce_inline_error {
+    background-color: lighten(red, 20%);
+  }
+
+}
