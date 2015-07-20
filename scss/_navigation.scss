@@ -1,10 +1,17 @@
 // Offset anchor links for fixed header
-:target:before {
+/* :target:before {
     content: "";
     display: block;
     height: 140px;
     margin: -140px 0 0;
     outline: 0;
+} */
+
+.anchor {
+  display: block;
+  height: 140px;
+  margin-top: -140px;
+  visibility: hidden;
 }
 
 .skip-link {

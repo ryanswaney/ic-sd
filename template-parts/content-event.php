@@ -70,8 +70,9 @@
 	</div><!-- .entry-content -->
 
 	<?php if( have_rows('speaker') ): ?>
+	<span class="anchor" id="speakers"></span>
 	<div class="speakers">
-		<h2 id="speakers">Featured Speakers <span class="more">Expand All</span></h2>
+		<h2>Featured Speakers <span class="more">Expand All</span></h2>
 		<ul class="speaker-list">
 		<?php while ( have_rows('speaker') ) : the_row(); ?>
 
@@ -121,7 +122,8 @@
 
 	if( $agenda_object ): ?>
 
-	<div class="agenda" id="agenda">
+	<span class="anchor" id="agenda"></span>
+	<div class="agenda">
 
 	<h2 class="agenda-title">Agenda</h2>
 
@@ -261,8 +263,9 @@
 
 	<?php $location = get_field('event_location_map'); ?>
 	<?php if( !empty($location) ): ?>
+	<span class="anchor" id="location"></span>
 	<div class="location">
-		<h2 id="location">Location</h2>
+		<h2>Location</h2>
 		<div class="event-map">
 			<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
 		</div>
