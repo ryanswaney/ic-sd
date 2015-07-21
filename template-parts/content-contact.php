@@ -297,10 +297,10 @@
 </div>
 <div class="mc-field-group input-group">
     <strong>I am a: </strong>
-    <ul><li><input type="radio" value="student" name="MMERGE3" id="mce-MMERGE3-0"><label for="mce-MMERGE3-0">student</label></li>
-<li><input type="radio" value="professional" name="MMERGE3" id="mce-MMERGE3-1"><label for="mce-MMERGE3-1">professional</label></li>
-<li><input type="radio" value="faculty" name="MMERGE3" id="mce-MMERGE3-2"><label for="mce-MMERGE3-2">faculty</label></li>
-<li><input type="radio" value="other" name="MMERGE3" id="mce-MMERGE3-3"><label for="mce-MMERGE3-3">other</label></li>
+    <ul><li><input type="radio" value="student" name="MMERGE3" id="mce-MMERGE3-0"><label for="mce-MMERGE3-0">Student</label></li>
+<li><input type="radio" value="professional" name="MMERGE3" id="mce-MMERGE3-1"><label for="mce-MMERGE3-1">Professional</label></li>
+<li><input type="radio" value="faculty" name="MMERGE3" id="mce-MMERGE3-2"><label for="mce-MMERGE3-2">Faculty</label></li>
+<li><input type="radio" value="other" name="MMERGE3" id="mce-MMERGE3-3"><label for="mce-MMERGE3-3">Other</label></li>
 </ul>
 </div>
   <div id="mce-responses" class="clear">
