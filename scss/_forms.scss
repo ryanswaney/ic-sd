@@ -1,37 +1,50 @@
 #mc_embed_signup {
   margin-top: 3em;
-  @include span-columns(12);
+  @include span-columns(10 of 12);
+  @include shift(1);
 
   @include media($large-screen) {
-    @include span-columns(8 of 12);
-    @include shift(2);
+    @include span-columns(12 of 12);
   }
 }
 
-  // Input field styles/layout
+.indicates-required {
+  font-size: 0.8em;
+  margin: 1em 0;
+}
 
-  .mc-field-group {
-    input {
-      display: block;
-      width: 100%;
-    }
+// Input field styles/layout
+
+.mc-field-group {
+
+  margin: 1em 0;
+
+  input {
+    display: block;
+    width: 100%;
   }
 
-  .mc-field-group.input-group {
-    ul {
-      list-style:none;
-
-    }
+  input[type="radio"] {
+    display: inline-block;
   }
+  
+}
 
-  // Validation/Error styles
-  div.mce_inline_error {
-    background-color: #FF3A00 !important;
-    font-family: $navigation-font-family;
-    font-weight: 400;
-    text-transform: uppercase;
-  }
+.mc-field-group.input-group {
+  ul {
+    list-style:none;
 
-  input.mce_inline_error {
-    border-color: #FF3A00 !important;
   }
+}
+
+// Validation/Error styles
+div.mce_inline_error {
+  background-color: #FF3A00 !important;
+  font-family: $navigation-font-family;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+input.mce_inline_error {
+  border-color: #FF3A00 !important;
+}
