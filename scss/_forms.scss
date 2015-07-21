@@ -10,7 +10,7 @@
 
 .indicates-required {
   font-size: 0.8em;
-  margin: 1em 0;
+  margin: 0 0 1em 0;
 }
 
 // Input field styles/layout
@@ -19,20 +19,37 @@
 
   margin: 1em 0;
 
-  input {
+  input,
+  select {
     display: block;
     width: 100%;
   }
 
   input[type="radio"] {
     display: inline-block;
+    margin-right: 0.8em;
+    width: auto;
   }
-  
+
+  input[type="submit"] {
+    background-color: $action-color;
+    border: 1px solid darken($action-color, 20%);
+    color: #fff;
+    padding: .25em 2em;
+
+    &:hover,
+    &:focus {
+      background-color: darken($action-color, 5%);
+    }
+
+  }
+
 }
 
 .mc-field-group.input-group {
   ul {
     list-style:none;
+    margin: 0;
 
   }
 }
@@ -47,4 +64,5 @@ div.mce_inline_error {
 
 input.mce_inline_error {
   border-color: #FF3A00 !important;
+  border-style: solid;
 }
