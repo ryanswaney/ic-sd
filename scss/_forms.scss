@@ -8,6 +8,13 @@
   }
 }
 
+.response {
+  margin: 2em 0em;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 1em 0;
+}
+
 .indicates-required {
   font-size: 0.8em;
   margin: 0 0 1em 0;
@@ -46,8 +53,9 @@
 
 input[type="submit"] {
     background-color: $action-color;
-    border: 1px solid darken($action-color, 20%);
+    border: none;
     color: #fff;
+    font-family: $navigation-font-family;
     padding: .25em 2em;
 
     &:hover,
