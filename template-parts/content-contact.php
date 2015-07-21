@@ -1,9 +1,23 @@
-<!-- Begin MailChimp Signup Form -->
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  <header class="entry-header">
+    <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+  </header><!-- .entry-header -->
+
+  <div class="entry-content">
+    <?php the_content(); ?>
+  </div><!-- .entry-content -->
+
+  <footer class="entry-footer">
+    <?php edit_post_link( esc_html__( 'Edit', 'icsd' ), '<span class="edit-link">', '</span>' ); ?>
+  </footer><!-- .entry-footer -->
+
+
+  <!-- Begin MailChimp Signup Form -->
 <div id="mc_embed_signup">
 <span class="anchor" id="subscribe"></span>
 <form action="//unsdsn.us8.list-manage.com/subscribe/post?u=a04105bfca6c4cb8c24ff8680&amp;id=ab7a9b8629" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll">
-  <h2>Subscribe to our mailing list</h2>
+  <h2>Subscribe for updates from the ICSD</h2>
 <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
 <div class="mc-field-group">
   <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
@@ -300,3 +314,6 @@
 </div>
 <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[4]='MMERGE4';ftypes[4]='text';fnames[5]='MMERGE5';ftypes[5]='dropdown';fnames[3]='MMERGE3';ftypes[3]='radio';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
 <!--End mc_embed_signup-->
+
+
+</article><!-- #post-## -->

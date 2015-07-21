@@ -6,11 +6,36 @@
 
     @include media($large-screen) {
       @include span-columns(8 of 12);
+      @include shift(2);
     }
   }
 
+  // Input field styles/layout
+
+  .mc-field-group {
+    input {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .mc-field-group.input-group {
+    ul {
+      list-style:none;
+
+    }
+  }
+
+  // Validation/Error styles
   div.mce_inline_error {
-    background-color: lighten(red, 20%);
+    background-color: #FF3A00 !important;
+    font-family: $navigation-font-family;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  input.mce_inline_error {
+    border-color: #FF3A00 !important;
   }
 
 }
