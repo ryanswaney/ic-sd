@@ -247,7 +247,7 @@ article.events {
     @include shift(3);
   }
   */
-  @include outer-container(100%);
+  @include span-columns(12 of 12);
 
   span.more {
     color: $action-color;
