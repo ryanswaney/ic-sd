@@ -238,6 +238,7 @@ article.events {
 
 // Speakers 
 .speakers {
+  /*
   @include span-columns(10 of 12);
   @include shift(1);
 
@@ -245,6 +246,8 @@ article.events {
     @include span-columns(6 of 12);
     @include shift(3);
   }
+  */
+  width: 100%;
 
   span.more {
     color: $action-color;
@@ -283,10 +286,19 @@ article.events {
 }
 
 .speaker-list {
+
+  /*
   list-style: none;
   @include pad(0);
 
   li { margin-bottom: 3em;}
+  */
+  @include outer-container;
+
+  li {
+    @include span-columns(3);
+    @include omega(4n);
+  }
 }
 
 .speaker-name {
