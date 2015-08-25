@@ -116,6 +116,19 @@ dialog {
 
   img.speaker-photo {
     float: right;
+    margin-bottom: 2em;
+    margin-left: 2em;
   }
 
+}
+.speaker-modal-close {
+  display: block;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  float: right;
+  text-transform: uppercase;
+  font-family: $navigation-font-family;
+  font-weight: bold;
+  color: #ccc;
+  font-size: .8em;
 }
