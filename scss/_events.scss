@@ -293,7 +293,7 @@ article.events {
 
   li { margin-bottom: 3em;}
   */
-  @include outer-container(100%);
+  @include outer-container(95%);
 
   li {
     @include span-columns(3);
@@ -302,11 +302,13 @@ article.events {
 }
 
 .speaker-name {
-  font-size: 1.5em;
+  //font-size: 1.5em;
+  font-size: 1em;
   padding-top: 0;
 
   @include media($large-screen) {
-    padding-top: 1.5em;
+    //padding-top: 1.5em;
+    padding: 0;
   }
 }
 .speaker-photo {
@@ -323,9 +325,11 @@ article.events {
   line-height: 1.4;
   padding-top: 0;
 
+  /*
   @include media($large-screen) {
     font-size: 1.15em;
   }
+  */
 
 }
 

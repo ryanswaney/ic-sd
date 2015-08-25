@@ -73,9 +73,12 @@
 	
 	<div class="speakers">
 		<span class="anchor" id="speakers"></span>
-		<h2>Featured Speakers <span class="more">Expand All</span></h2>
+		<h2>Featured Speakers <!-- <span class="more">Expand All</span> --></h2>
 		<ul class="speaker-list">
+		<?php $speaker_counter = 0; ?>
 		<?php while ( have_rows('speaker') ) : the_row(); ?>
+
+			<?php $speaker_counter++; ?>
 
 			<?php if( get_row_layout() == 'speaker_details' ): ?>
 				<li>
@@ -94,7 +97,18 @@
 					
 					<div>
 					<?php if ( get_sub_field('speaker_name') ) : ?>
-						<h3 class="speaker-name"><?php the_sub_field('speaker_name'); /* Event -- Speaker Name // ACF */ ?></h3>
+
+						<?php $modal_id = 'speaker_modal_id_'.$speaker_counter; ?>
+
+						<button class="js-modal"
+						data-modal-prefix-class="simple"
+						data-modal-content-id="<?php echo $modal_id; ?>"
+						data-modal-title="<?php the_sub_field('speaker_name');?>"
+						data-modal-close-text="Close"
+						data-modal-close-title="Close">
+						<?php the_sub_field('speaker_name'); ?>
+						</button>
+						<!-- <h3 class="speaker-name"><?php the_sub_field('speaker_name'); /* Event -- Speaker Name // ACF */ ?></h3> -->
 					<?php endif; ?>
 					
 					<?php if ( get_sub_field('speaker_title') ): ?>
@@ -104,7 +118,7 @@
 					</div><!-- Speaker Header -->
 					
 					<?php if ( get_sub_field('speaker_bio') ): ?>
-						<div class="speaker-bio">
+						<div id="<?php echo $modal_id; ?> class="speaker-bio">
 							<?php the_sub_field('speaker_bio'); /* Event -- Speaker Bio // ACF */ ?>
 						</div>
 					<?php endif; ?>
