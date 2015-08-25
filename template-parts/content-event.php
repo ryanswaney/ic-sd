@@ -119,6 +119,19 @@
 					
 					<?php if ( get_sub_field('speaker_bio') ): ?>
 						<div id="<?php echo $modal_id; ?>" class="speaker-bio">
+
+							<?php if (get_sub_field('speaker_photo') ): ?>
+								<?php
+								$image = get_sub_field('speaker_photo');
+
+								$size = 'thumbnail';
+								$thumb = $image['sizes'][ $size ];
+								?>
+
+								<img src="<?php echo $thumb; ?>" class="speaker-photo" />
+
+							<? endif; /* Event -- Speaker Photos // ACF // */ ?>
+
 							<?php the_sub_field('speaker_bio'); /* Event -- Speaker Bio // ACF */ ?>
 						</div>
 					<?php endif; ?>

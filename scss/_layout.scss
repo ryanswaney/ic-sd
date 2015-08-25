@@ -91,6 +91,10 @@ dialog {
   left: 0;
   z-index: 997;
   background-color: rgba(0,0,0,.5);
+
+  .invisible {
+    display: none;
+  }
 }
 .speaker-modal {
   position: fixed;
