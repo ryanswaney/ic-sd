@@ -118,7 +118,7 @@
 					</div><!-- Speaker Header -->
 					
 					<?php if ( get_sub_field('speaker_bio') ): ?>
-						<div id="<?php echo $modal_id; ?> class="speaker-bio">
+						<div id="<?php echo $modal_id; ?>" class="speaker-bio">
 							<?php the_sub_field('speaker_bio'); /* Event -- Speaker Bio // ACF */ ?>
 						</div>
 					<?php endif; ?>
