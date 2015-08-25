@@ -101,7 +101,7 @@
 						<?php $modal_id = 'speaker_modal_id_'.$speaker_counter; ?>
 
 						<button class="js-modal"
-						data-modal-prefix-class="simple"
+						data-modal-prefix-class="speaker"
 						data-modal-content-id="<?php echo $modal_id; ?>"
 						data-modal-title="<?php the_sub_field('speaker_name');?>"
 						data-modal-close-text="Close"
