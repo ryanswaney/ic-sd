@@ -100,8 +100,6 @@ function icsd_scripts() {
 
 	if ( is_singular( 'events' ) || is_front_page() ) {
 
-		wp_enqueue_script( 'jquery-modal', get_template_directory_uri() . '/js/modal.js', array('jquery'), '20130115', true );
-
 		wp_enqueue_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false', null, null, true );
 		wp_enqueue_script( 'icsd-event-map', get_template_directory_uri() . '/js/acf-to-gmap.js', array('jquery'), '20130115', true );
 	}
