@@ -15,7 +15,7 @@ body {
   right: 0;
   height: 100px;
   background-color: rgba(0,0,0,.5);
-  z-index: 999999;
+  z-index: 996;
 }
 
 .site-branding {
@@ -89,14 +89,19 @@ dialog {
   bottom: 0;
   right: 0;
   left: 0;
-  z-index: 666;
+  z-index: 997;
+  background-color: rgba(0,0,0,.5);
 }
 .speaker-modal {
   position: fixed;
   left: 25%;
   right: auto;
-  top: 15%;
+  top: 10%;
   width: 50%;
   background: #fff;
-  z-index: 667;
+  z-index: 998;
+
+  overflow: auto;
+  max-height: 100%;
+
 }
