@@ -253,6 +253,10 @@ article.events {
   margin-top: 2em;
   margin-bottom: 2em;
 
+  h2 {
+    text-align: center;
+  }
+
   span.more {
     color: $action-color;
     cursor: pointer;
@@ -301,8 +305,8 @@ article.events {
   @include outer-container(95%);
 
   li {
-    @include span-columns(10 of 12);
-    @include shift(1);
+    @include span-columns(12 of 12);
+    @include omega(1n);
 
     @include media($large-screen) {
       @include span-columns(3);
