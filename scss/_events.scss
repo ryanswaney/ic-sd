@@ -306,13 +306,14 @@ article.events {
 
   li {
     @include span-columns(12 of 12);
-    @include omega(1n);
+    @include omega(4n);
 
     @include media($large-screen) {
       @include span-columns(3);
       @include omega(4n);
     }
   }
+
 }
 
 /*
