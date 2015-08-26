@@ -297,14 +297,21 @@ article.events {
 
   li { margin-bottom: 3em;}
   */
+
   @include outer-container(95%);
 
   li {
-    @include span-columns(3);
-    @include omega(4n);
+    @include span-columns(10 of 12);
+    @include shift(1);
+
+    @include media($large-screen) {
+      @include span-columns(3);
+      @include omega(4n);
+    }
   }
 }
 
+/*
 .speaker-name {
   //font-size: 1.5em;
   font-size: 1em;
@@ -314,7 +321,25 @@ article.events {
     //padding-top: 1.5em;
     padding: 0;
   }
+}*/
+
+.speaker-name {
+  border: 0;
+  margin-bottom: .5em;
+  width: 100%;
+  text-align: left;
+  background: none;
+  font-family: futura-pt;
+  font-weight: 700;
+  font-size: 1.25em;
+  border-bottom: 1px solid #ccc;
+
+  &:hover,
+  &:focus {
+    border-bottom: 1px solid $action-color;
+  }
 }
+
 .speaker-photo {
   border-radius: 50%;
   /* Prevent background color leak outs */
