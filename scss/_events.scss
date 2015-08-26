@@ -252,6 +252,9 @@ article.events {
 
   margin-top: 2em;
   margin-bottom: 2em;
+  padding: 1em 0;
+
+  background-color: lighten($action-color, 50%);
 
   h2 {
     text-align: center;
@@ -304,9 +307,13 @@ article.events {
 
   @include outer-container(95%);
 
+  @include pad(0);
+
   li {
     @include span-columns(12 of 12);
     @include omega(4n);
+
+    margin-bottom: 1.5em;
 
     @include media($large-screen) {
       @include span-columns(3);
