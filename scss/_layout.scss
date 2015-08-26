@@ -108,6 +108,7 @@ dialog {
   overflow: auto;
   max-height: 90%;
   border: 0;
+  padding: 1em;
 
   @include media($large-screen) {
     width: 50%;
