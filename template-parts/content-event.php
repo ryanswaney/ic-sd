@@ -185,6 +185,8 @@
 					<?php endif; ?>
 
 					<h2><?php the_sub_field('d1_bs_title'); ?></h2>
+
+					<?php the_sub_field('d1_bs_desc'); ?>
 				</div>
 			</li>
 
@@ -249,6 +251,8 @@
 					<?php endif; ?>
 
 					<h2><?php the_sub_field('d2_bs_title'); ?></h2>
+
+					<?php the_sub_field('d2_bs_desc'); ?>
 				</div>
 			</li>
 
