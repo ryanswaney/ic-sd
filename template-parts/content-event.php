@@ -322,6 +322,24 @@
 	</div>
 	<?php endif; ?>
 
+<?php if( have_rows('sponsor_list') ): ?>
+	<!-- sponsors -->
+	<div class="sponsors">
+		<span class="anchor" id="sponsors"></span>
+		<h3>Sponsors</h3>
+		<ul class="sponsor-list">
+		<?php while ( have_rows('sponsor_list') ) : the_row(); ?>
+
+			<li>
+				<h4><?php the_sub_field('sponsor_title'); ?></h4>
+			</li>
+
+		<?php endwhile; ?>
+		</ul>
+	</div>
+	<!-- /sponsors -->
+	<?php endif; ?>
+
 	<footer class="entry-footer">
 		<?php icsd_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
