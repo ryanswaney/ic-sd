@@ -326,12 +326,12 @@
 	<!-- sponsors -->
 	<div class="sponsors">
 		<span class="anchor" id="sponsors"></span>
-		<h3>Sponsors</h3>
+		<h2>Sponsors</h2>
 		<ul class="sponsor-list">
 		<?php while ( have_rows('sponsor_list') ) : the_row(); ?>
 
 			<li>
-				<h4><?php the_sub_field('sponsor_title'); ?></h4>
+				<h4><?php the_sub_field('sponsor_name'); ?></h4>
 			</li>
 
 		<?php endwhile; ?>
