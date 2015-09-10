@@ -402,7 +402,7 @@ article.events {
 
   li {
     @include span-columns(12 of 12);
-    @include omega(4n);
+    @include omega(3n);
 
     margin-bottom: 1.5em;
     text-align: center;
@@ -410,8 +410,8 @@ article.events {
     img { max-width: 60%; margin: 0 auto;}
 
     @include media($large-screen) {
-      @include span-columns(3);
-      @include omega(4n);
+      @include span-columns(4);
+      @include omega(3n);
     }
   }
 
