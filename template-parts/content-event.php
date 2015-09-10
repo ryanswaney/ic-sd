@@ -329,11 +329,24 @@
 		<h2>Sponsors</h2>
 		<ul class="sponsor-list">
 		<?php while ( have_rows('sponsor_list') ) : the_row(); ?>
-
 			<li>
-				<h4><?php the_sub_field('sponsor_name'); ?></h4>
-			</li>
+			<?php
+				$image = get_sub_field('sponsor_logo');
 
+				if( !empty($image) ):
+
+				$size = 'thumbnail';
+				$thumb = $image['sizes'][ $size ];
+
+				?>
+
+				<img src="<?php echo $thumb ?>" alt="<?php echo $image['alt']; ?>" />
+
+			<?php endif; // sponsor-logo ?>
+			<?php if( get_sub_field('sponsor_name') ) : ?>
+				<h4><?php the_sub_field('sponsor_name'); ?></h4>
+			<?php endif; // sponsor_name ?>
+			</li>
 		<?php endwhile; ?>
 		</ul>
 	</div>
