@@ -335,12 +335,12 @@
 
 				if( !empty($image) ):
 
-				$size = 'thumbnail';
+				$size = 'medium';
 				$thumb = $image['sizes'][ $size ];
 
 				?>
 
-				<img src="<?php echo $thumb ?>" alt="<?php echo $image['alt']; ?>" />
+				<img src="<?php echo $thumb ?>" />
 
 			<?php endif; // sponsor-logo ?>
 			<?php if( get_sub_field('sponsor_name') ) : ?>
