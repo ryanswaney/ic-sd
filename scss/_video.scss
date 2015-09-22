@@ -1,7 +1,20 @@
 // Video Styles
 
-.content-area {
 
-  #WebcastTitle { display: none !important; }
+// Removed fixed navigation on live stream page.
+.page-template-page-stream {
+
+  .site-header {
+    position: relative;
+  }
+
+}
+
+.page-template-page-stream {
+
+  iframe {
+    width: 100% !important;
+    height: 675px !important;
+  }
 
 }
