@@ -15,7 +15,8 @@
   iframe {
     
     border: 1px solid #ccc;
-    max-width: 100% !important;
+    width: 100%;
+    max-width: inherit !important;
     height: 675px !important;
 
   } // .iframe
