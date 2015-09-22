@@ -2,7 +2,7 @@
 /**
  * The template for displaying the static front page.
  *
- * @package happiness
+ * @package icsd
  */
 
 get_header(); ?>
