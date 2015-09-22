@@ -8,10 +8,6 @@
     position: relative;
   }
 
-}
-
-.page-template-page-stream {
-
   iframe {
     
     border: 1px solid #ccc;
@@ -19,10 +15,12 @@
     height: 675px !important;
 
     .content-area {
+      div, p, table {
       font-family: $base-font-family !important;
       font-size: $base-font-size !important;
-    }
+      }
+    } // .content-area
 
-  }
+  } // .iframe
 
-}
+} // page-template-page-stream
