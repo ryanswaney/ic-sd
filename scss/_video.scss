@@ -13,8 +13,16 @@
 .page-template-page-stream {
 
   iframe {
+    
+    border: none;
     width: 100% !important;
     height: 675px !important;
+
+    .content-area {
+      font-family: $base-font-family;
+      font-size: $base-font-size;
+    }
+
   }
 
 }
