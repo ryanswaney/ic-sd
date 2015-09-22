@@ -39,6 +39,12 @@
 		</div>
 		<?php endif; // call to action ?>
 
+		<?php if ( get_field('live_stream_url') ): ?>
+		<div class="event-call-to-action">
+			<a href="<?php echo esc_url( the_field('live_stream_url') ); ?>" title="Watch Live">Watch Live</a>
+		</div>
+		<?php endif; // call to action ?>
+
 	</header>
 
 <?php else : // no feature image ?>
