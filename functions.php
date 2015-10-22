@@ -61,7 +61,7 @@ function icsd_setup() {
 	 * Enable support for Post Formats.
 	 * See http://codex.wordpress.org/Post_Formats
 	 */
-	add_theme_support( 'post-formats', array( 'video' ) );
+	add_theme_support( 'post-formats', array( 'video', 'gallery' ) );
 
 	// Set up the WordPress core custom background feature.
 	/*
