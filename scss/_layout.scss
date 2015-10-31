@@ -40,17 +40,20 @@ body {
 }
 
 .archive,
+.attachment,
 .blog,
-.page,
-.single-post {
-  .site-content {
+.page, {
+  .type-attachment,
+  .type-events,
+  .type-post,
+  .type-page {
     background-color: #fff;
     margin-top: 140px;
   }
 }
 
 .home.page {
-  .site-content {
+  .type-events {
     margin-top: 0;
   }
 }

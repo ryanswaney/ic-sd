@@ -82,10 +82,15 @@ function icsd_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
+	/*
 	$posted_on = sprintf(
 		esc_html_x( 'Posted on %s', 'post date', 'icsd' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">'. $time_string . '</a>'
 	);
+	*/
+
+	$posted_on = sprintf(
+		esc_html_x( 'Posted on %s', 'post date', 'icsd' ), $time_string );
 
 	$byline = sprintf(
 		esc_html_x( 'by %s', 'post author', 'icsd' ),

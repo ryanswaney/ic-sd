@@ -1,0 +1,24 @@
+// WordPress Gallery Styles
+.gallery {
+
+  @include outer-container;
+
+  .gallery-item {
+    @include span-columns(12 of 12);
+    @include omega(3n);
+  }
+
+  @include media($medium-screen) {
+
+    .gallery-item {
+      @include span-columns(3);
+      @include omega(3n);
+
+    }
+  }
+
+  img {
+      max-width: 100%;
+      height: auto; }
+  
+}
