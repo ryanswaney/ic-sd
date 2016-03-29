@@ -17,20 +17,28 @@
 	$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 
 ?>
-	<header class="entry-header has-feature-image" <?php echo 'style="background-image: linear-gradient(
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.2) ),
-      url('.$large_image_url[0].');"'; ?>>
+	<header class="entry-header has-feature-image" <?php echo 'style="background-color: #000;
+	background-image: linear-gradient(
+      rgba(0, 0, 0, 0.0),
+      rgba(0, 0, 0, 0.0) ),
+      url('.$large_image_url[0].');
+			background-position: top center;"'; ?>>
 
 		<?php if(get_field('event_theme')) : ?>
-		<h2 class="event-theme"><?php the_field('event_theme'); ?></h2>
+		<h2 class="event-theme">
+			<span><?php the_field('event_theme'); ?></span>
+		</h2>
 		<?php endif; /* Event Theme // ACF */ ?>
 
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="entry-title"><span>', '</span></h1>' ); ?>
 
 		<div class="entry-meta">
-			<h4 class="event-date"><?php icsd_acf_events_date_range(); ?></h4>
-			<h4 class="event-location"><?php the_field('event_location_text'); ?></h4>
+			<h4 class="event-date">
+				<span><?php icsd_acf_events_date_range(); ?></span>
+			</h4>
+			<h4 class="event-location">
+				<span><?php the_field('event_location_text'); ?></span>
+		  </h4>
 		</div><!-- .entry-meta -->
 
 		<?php if ( get_field('event_registration_url') ): ?>
@@ -75,77 +83,80 @@
 		<?php the_content(); ?>
 	</div><!-- .entry-content -->
 
-	<?php if( have_rows('speaker') ): ?>
-	
+	<?php if( have_rows('speaker') ) : ?>
+	<?php $speaker_counter = 0; ?>
+
 	<div class="speakers">
 		<span class="anchor" id="speakers"></span>
-		<h2>Featured Speakers <!-- <span class="more">Expand All</span> --></h2>
+		<h2>Featured Speakers</h2>
+
 		<ul class="speaker-list">
-		<?php $speaker_counter = 0; ?>
-		<?php while ( have_rows('speaker') ) : the_row(); ?>
+		<?php
+		// loop through speakers
+			while ( have_rows('speaker') ) : the_row();
 
-			<?php $speaker_counter++; ?>
+			$speaker_counter++;
 
-			<?php if( get_row_layout() == 'speaker_details' ): ?>
+				if( get_row_layout() == 'speaker_details' ):
+		?>
 				<li>
 					<div class="speaker-header">
-					<?php if (get_sub_field('speaker_photo') ): ?>
 						<?php
+						if(get_sub_field('speaker_photo')):
 							$image = get_sub_field('speaker_photo');
-
 							$size = 'thumbnail';
 							$thumb = $image['sizes'][ $size ];
-						?>
+							echo '<img src="'.$thumb.'" class="speaker-photo"/>';
+						endif; /* Event -- Speaker Photos // ACF // */ ?>
 
-							<img src="<?php echo $thumb; ?>" class="speaker-photo" />
+						<div>
 
-					<? endif; /* Event -- Speaker Photos // ACF // */ ?>
-					
-					<div>
-					<?php if ( get_sub_field('speaker_name') ) : ?>
+						<?php
+						if ( get_sub_field('speaker_name') ) :
+							$modal_id = 'speaker_modal_id_'.$speaker_counter;
+			      ?>
+			        <button class="js-modal speaker-name"
+			        data-modal-prefix-class="speaker"
+			        data-modal-content-id="<?php echo $modal_id; ?>"
+			        data-modal-title="<?php the_sub_field('speaker_name');?>"
+			        data-modal-close-text="Close"
+			        data-modal-close-title="Close">
+			        <?php the_sub_field('speaker_name'); ?>
+			        </button>
+			      <?php endif; // speaker name ?>
 
-						<?php $modal_id = 'speaker_modal_id_'.$speaker_counter; ?>
+						<?php if(get_sub_field('speaker_title')): ?>
+							<h4 class="speaker-title">
+								<?php the_sub_field('speaker_title'); /* Event -- Speaker Title // ACF */ ?>
+							</h4>
+						<?php endif; // speaker title ?>
+						</div>
+						</div><!-- Speaker Header -->
 
-						<button class="js-modal speaker-name"
-						data-modal-prefix-class="speaker"
-						data-modal-content-id="<?php echo $modal_id; ?>"
-						data-modal-title="<?php the_sub_field('speaker_name');?>"
-						data-modal-close-text="Close"
-						data-modal-close-title="Close">
-						<?php the_sub_field('speaker_name'); ?>
-						</button>
-						<!-- <h3 class="speaker-name"><?php the_sub_field('speaker_name'); /* Event -- Speaker Name // ACF */ ?></h3> -->
-					<?php endif; ?>
-					
-					<?php if ( get_sub_field('speaker_title') ): ?>
-						<h4 class="speaker-title"><?php the_sub_field('speaker_title'); /* Event -- Speaker Title // ACF */ ?></h4>
-					<?php endif; ?>
-					</div>
-					</div><!-- Speaker Header -->
-					
-					<?php if ( get_sub_field('speaker_bio') ): ?>
+						<?php if ( get_sub_field('speaker_bio') ): ?>
 						<div id="<?php echo $modal_id; ?>" class="speaker-bio">
 
-							<?php if (get_sub_field('speaker_photo') ): ?>
-								<?php
+							<?php
+							if(get_sub_field('speaker_photo')) :
 								$image = get_sub_field('speaker_photo');
-
 								$size = 'thumbnail';
 								$thumb = $image['sizes'][ $size ];
-								?>
 
-								<img src="<?php echo $thumb; ?>" class="speaker-photo" />
+								echo '<img src="'.$thumb.'" class="speaker-photo" />';
 
-							<? endif; /* Event -- Speaker Photos // ACF // */ ?>
+							endif; /* Event -- Speaker Photos // ACF // */ ?>
 
 							<?php the_sub_field('speaker_bio'); /* Event -- Speaker Bio // ACF */ ?>
 						</div>
-					<?php endif; ?>
-				</li>
-			<?php endif; ?>
+  					<?php endif; // speaker bio ?>
 
-		<?php endwhile; ?>
+				</li>
+		<?php
+				endif; // speaker_details
+			endwhile; // speaker loop
+		?>
 		</ul>
+
 	</div>
 	<?php endif; ?>
 	<!-- .speakers -->
@@ -156,13 +167,13 @@
 
 	if( $agenda_object ): ?>
 
-	
+
 	<div class="agenda">
 	<span class="anchor" id="agenda"></span>
 
 	<h2 class="agenda-title">Agenda</h2>
 
-	
+
 
 	<?php if( have_rows('session_group_1', $agenda_object->ID) ): ?>
 
@@ -302,7 +313,7 @@
 
 	<?php $location = get_field('event_location_map'); ?>
 	<?php if( !empty($location) ): ?>
-	
+
 	<div class="location">
 	<span class="anchor" id="location"></span>
 		<h2>Location</h2>

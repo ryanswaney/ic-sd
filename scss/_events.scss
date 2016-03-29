@@ -1,7 +1,7 @@
 /**
  * EVENTS
  *
- * Type sizes based on: http://www.modularscale.com/?1&em&1.25&web&text 
+ * Type sizes based on: http://www.modularscale.com/?1&em&1.25&web&text
  */
 
 article.events {
@@ -12,9 +12,12 @@ article.events {
     @include span-columns(10 of 12);
     @include shift(1);
 
-    @include media($large-screen){
+    margin-top: 1.333rem;
+
+    @include media($large-screen) {
       @include span-columns(6 of 12);
       @include shift(3);
+
       @include pad(2em 0 0 0);
     }
   }
@@ -29,18 +32,7 @@ article.events {
     .event-theme {
       font-family: $base-font-family;
       font-size: $base-font-size;
-      font-style: italic;
       font-weight: 400;
-    }
-
-  }
-
-  .event-date {
-
-    @include media($large-screen) {
-      &:after {
-        content: " | "
-      }
     }
 
   }
@@ -57,8 +49,9 @@ article.events {
     text-align: center;
 
     a {
-      background: rgba(0,0,0,.30);
-      border: 4px solid gold;
+      //background: rgba(0,0,0,.30);
+      background: $cta-color;
+      //border: 4px solid gold;
       color: #fff;
       display: inline-block;
       font-family: $navigation-font-family;
@@ -73,7 +66,7 @@ article.events {
 
       &:hover,
       &:focus {
-        border-color: lighten(gold, 30%);
+        background-color: lighten($cta-color, 6%);
         padding: .25em 2em;
       }
 
@@ -84,17 +77,17 @@ article.events {
 
   .entry-header.has-feature-image {
     background-size: cover;
-    background-position: centered;
+    background-position: center;
     background-repeat: no-repeat;
     padding-top: 140px;
-    padding-bottom: 50px;
+    padding-bottom: 140px;
 
     .entry-title,
     .event-theme,
     .entry-meta {
       text-align: center;
       color: #fff;
-      //text-shadow: rgba(4,6,129, .4) 2px 2px 20px; 
+      //text-shadow: rgba(4,6,129, .4) 2px 2px 20px;
     }
 
     .event-theme {
@@ -108,15 +101,31 @@ article.events {
     }
 
     .entry-title {
-      border: 0;
-
       font-size: 4vw;
-      font-weight: 300;
-      
+      //font-weight: 400;
+      line-height: 1.4;
       text-transform: uppercase;
+      border: 0;
       margin-right: auto;
       margin-left: auto;
       max-width: 90%;
+      padding: 2px 0;
+    }
+
+    .entry-title,
+    .event-theme,
+    .event-date,
+    .event-location {
+      span {
+        background-color: $action-color;
+        color: #fff;
+        display: inline;
+        padding: 0 1rem;
+
+        /* Needs prefixing */
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+      }
     }
 
     .entry-meta {
@@ -124,7 +133,7 @@ article.events {
       font-size: 1.5em;
       font-size: 3.5vw;
 
-      @include media($large-screen){
+      @include media($large-screen) {
         font-size: 2em;
         font-size: 1.5vw
       }
@@ -167,7 +176,7 @@ article.events {
 
   time {
     @include span-columns(10 of 12);
-    
+
 
     @include media($large-screen) {
       @include span-columns(3 of 12);
@@ -193,7 +202,7 @@ article.events {
   height: auto;
   margin-right: 1em;
   max-width: 75px;
-  
+
 }
 
 .sessions {
@@ -211,11 +220,11 @@ article.events {
 
   }
 
-  
+
 }
 
 .event-description {
-  h2 { 
+  h2 {
     font-size: $base-font-size;
     margin-top: 0;
   }
@@ -236,7 +245,7 @@ article.events {
   margin: 20px 0;
 }
 
-// Speakers 
+// Speakers
 .speakers {
   /*
   @include span-columns(10 of 12);
@@ -341,9 +350,9 @@ article.events {
   width: 100%;
   text-align: left;
   background: none;
-  font-family: futura-pt;
+  font-family: $base-font-family;
   font-weight: 700;
-  font-size: 1.25em;
+  font-size: 1em;
   line-height: 1.2;
   border-bottom: 1px solid #ccc;
 
@@ -356,8 +365,8 @@ article.events {
 .speaker-photo {
   border-radius: 50%;
   /* Prevent background color leak outs */
-  -webkit-background-clip: padding-box; 
-  -moz-background-clip:    padding; 
+  -webkit-background-clip: padding-box;
+  -moz-background-clip:    padding;
   background-clip:         padding-box;
 }
 .speaker-title {

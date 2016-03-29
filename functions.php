@@ -92,11 +92,14 @@ add_action( 'after_setup_theme', 'icsd_content_width', 0 );
 function icsd_scripts() {
 	wp_enqueue_style( 'icsd-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'icsd-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	//wp_enqueue_script( 'icsd-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'icsd-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	//wp_enqueue_script( 'icsd-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+
+	wp_enqueue_script( 'okaynav-js', get_template_directory_uri() . '/js/jquery.okayNav-min.js', array('jquery'), '2.0.4', true );
 
 	wp_enqueue_script( 'icsd-js', get_template_directory_uri() . '/js/icsd.js', array('jquery'), '20130115', true );
+
 
 	if ( is_singular( 'events' ) || is_front_page() ) {
 
@@ -144,4 +147,3 @@ require get_template_directory() . '/inc/cpt-events.php';
  * Custom Post Type for Agendas
  */
 require get_template_directory() . '/inc/cpt-agendas.php';
-

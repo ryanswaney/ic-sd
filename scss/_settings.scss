@@ -1,6 +1,10 @@
-$base-font-family: "adobe-caslon-pro", "Adobe Caslon Pro", serif;
-$heading-font-family: "futura-pt", "Futura PT", "Futura", sans-serif;
-$navigation-font-family: "futura-pt", "Futura PT", "Futura", sans-serif;
+//$base-font-family: "adobe-caslon-pro", "Adobe Caslon Pro", serif;
+//$heading-font-family: "futura-pt", "Futura PT", "Futura", sans-serif;
+//$navigation-font-family: "futura-pt", "Futura PT", "Futura", sans-serif;
+
+$base-font-family: "Fira Sans", sans-serif;
+$heading-font-family: "Fira Sans", sans-serif;
+$navigation-font-family: "Fira Sans", sans-serif;
 
 // Font Sizes
 $base-font-size: 1em;
@@ -22,6 +26,7 @@ $base-font-color: #333;
 $highlight-color: #f99d1c;
 $base-border-color: #ccc;
 $action-color: #227dcf;
+$cta-color: #D74139;
 
 $top-bar-bg-color: #f2c70f;
 
@@ -43,5 +48,5 @@ h1, h2, h3, h4, h5, h6 {
   line-height: $heading-line-height;
   margin: 0;
   @include pad(.5em 0);
-  
+
 }
