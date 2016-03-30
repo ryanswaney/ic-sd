@@ -1,17 +1,18 @@
 jQuery(document).ready(function($) {
 
-
   var navigation = $('#nav-main').okayNav();
 
+  // remove height/width attributes from WP oEmbed iframes
+  var $wp_oembed = $("iframe[class*='wp-embedded-content']");
 
-  // Expand/Collapse for Speaker bios
-  /*
-  $('div.speakers h2 span.more').on('click', function() {
+	$wp_oembed.each(function() {
 
-    $(this).parent().next('.speaker-list').toggleClass('toggled');
+    $(this).removeAttr('height');
+    $(this).removeAttr('width');
+    $(this).wrap( "<div class='embed-container'></div>" );
 
-  });
-*/
+ 	});
+
 
   /*
     * jQuery simple and accessible modal window, using ARIA

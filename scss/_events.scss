@@ -51,13 +51,14 @@ article.events {
     a {
       //background: rgba(0,0,0,.30);
       background: $cta-color;
-      //border: 4px solid gold;
+      border: 4px solid darken($cta-color, 12%);
+      border-radius: 12px;
       color: #fff;
       display: inline-block;
       font-family: $navigation-font-family;
       font-size: 1.5em;
       font-weight: 700;
-      padding: .25em 1.25em;
+      padding: .333em 2em;
       text-decoration: none;
       text-transform: uppercase;
       -webkit-transition: padding .1s ease;
@@ -66,8 +67,9 @@ article.events {
 
       &:hover,
       &:focus {
-        background-color: lighten($cta-color, 6%);
-        padding: .25em 2em;
+        background-color: #E46E31;
+        border-color: darken(#E46E31, 6%);
+        padding: .333em 3em;
       }
 
     }

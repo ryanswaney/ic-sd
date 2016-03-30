@@ -13,7 +13,7 @@
   }
 
   iframe {
-    
+
     border: 1px solid #ccc;
     width: 95%;
     max-width: inherit !important;
@@ -32,3 +32,16 @@
   } // .content-area
 
 } // page-template-page-stream
+
+// WP oEmbeds
+.embed-container {
+  margin: 20px 0;
+  position: relative;
+}
+.wp-embedded-content {
+  width: 100%;
+}
+.wp-embed-more {
+  background-color: $cta-color !important;
+  display: block;
+}
