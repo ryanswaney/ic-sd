@@ -35,6 +35,23 @@ function icsd_setup() {
 	add_theme_support( 'title-tag' );
 
 	/*
+	 * Let WordPress manage a custom logo.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded logo <img> in the document head, and expect WordPress to
+	 * provide it for us.
+	 *
+	 * @link https://codex.wordpress.org/Function_Reference/add_theme_support#Custom_Logo
+	 */
+	add_theme_support( 'custom-logo', array(
+		'height'      => 100,
+		'width'       => 100,
+		'flex-height' => true,
+		'flex-width'  => true,
+		'header-text' => array( 'site-title', 'site-description' )
+	)
+	);
+
+	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails

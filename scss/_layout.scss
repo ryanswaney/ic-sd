@@ -71,7 +71,8 @@ body {
 // Footer Grid
 .site-footer {
   @include outer-container(100%);
-  background: linear-gradient(217deg, #4ab175, #227dcf);
+  //background: linear-gradient(217deg, #4ab175, #227dcf);
+  background-color: #000;
   padding-top: 3em;
   padding-bottom: 3em;
 
