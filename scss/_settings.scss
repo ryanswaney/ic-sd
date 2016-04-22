@@ -25,9 +25,13 @@ $base-z-index: 0;
 $base-font-color: #333;
 $highlight-color: #f99d1c;
 $base-border-color: #ccc;
-$action-color: #227dcf;
+//$action-color: #227dcf;
+$action-color: rgba(3,44,66,1);
 $cta-color: #D74139;
+$cta-color: #4CA046;
 
+// Background Colors
+$base-bg-color: rgb(3,44,66);
 $top-bar-bg-color: #f2c70f;
 
 // Screen Sizing

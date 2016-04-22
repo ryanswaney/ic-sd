@@ -22,9 +22,11 @@
       rgba(0, 0, 0, 0.0),
       rgba(0, 0, 0, 0.0) ),
       url('.$large_image_url[0].');
-			background-position: top center;"'; ?>>
+			background-position: top center;
+			position: relative;
+			padding-bottom: 0;"'; ?>>
 
-		<?php if(get_field('event_theme')) : ?>
+		<?php if(get_field('event_theme-')) : ?>
 		<h2 class="event-theme">
 			<span><?php the_field('event_theme'); ?></span>
 		</h2>
@@ -32,12 +34,13 @@
 
 		<?php the_title( '<h1 class="entry-title"><span>', '</span></h1>' ); ?>
 
+		<!--
 		<div class="entry-meta">
 			<h4 class="event-date">
-				<span><?php icsd_acf_events_date_range(); ?></span>
+				<span><?php //icsd_acf_events_date_range(); ?></span>
 			</h4>
 			<h4 class="event-location">
-				<span><?php the_field('event_location_text'); ?></span>
+				<span><?php the_field('event_location_text-'); ?></span>
 		  </h4>
 		</div><!-- .entry-meta -->
 
@@ -52,6 +55,14 @@
 			<a href="<?php echo esc_url( the_field('live_stream_url') ); ?>" title="Watch Live">Watch Live</a>
 		</div>
 		<?php endif; // call to action ?>
+
+		<ul class="test-list">
+			<li>
+				<span>Moving Forward: The SDGs in Practice</span>
+			</li>
+			<li><span>September 21 – 22, 2016</span></li>
+			<li><span>New York, NY</span></li>
+		</ul>
 
 	</header>
 

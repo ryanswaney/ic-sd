@@ -3,9 +3,6 @@
   @include span-columns(10 of 12);
   @include shift(1);
 
-  @include media($large-screen) {
-    @include span-columns(12 of 12);
-  }
 }
 
 .response {
