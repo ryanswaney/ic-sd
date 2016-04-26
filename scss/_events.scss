@@ -28,7 +28,8 @@ article.events {
     background-size: 400% 400%;
 
     //padding: 140px 25px 50px 25px;
-    padding: 140px 0 50px 0;
+    //padding: 140px 0 50px 0;
+    padding: 12em 0 0 0;
 
     .event-theme {
       font-family: $base-font-family;
@@ -82,28 +83,13 @@ article.events {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding-top: 140px;
-    padding-bottom: 140px;
-
-    .entry-title,
-    .event-theme,
-    .entry-meta {
-      text-align: center;
-      color: #fff;
-      //text-shadow: rgba(4,6,129, .4) 2px 2px 20px;
-    }
-
-    .event-theme {
-      font-size: 1.5em;
-      font-size: 3.5vw;
-      font-weight: 300;
-
-      @include media($large-screen) {
-        font-size: 1.5vw;
-      }
-    }
+    //padding-top: 140px;
+    //padding-bottom: 140px;
+    min-height: 100%;
 
     .entry-title {
+      text-align: center;
+      color: #fff;
       font-size: 12vw;
       line-height: 1;
       text-transform: uppercase;
@@ -114,48 +100,17 @@ article.events {
       padding: 0;
     }
 
-    .entry-title,
-    .event-theme,
-    .event-date,
-    .event-location {
-      span {
-        //background-color: rgba($action-color,.5);
-        color: #fff;
-        display: inline;
-        padding: 0 1rem;
-
-        /* Needs prefixing */
-        box-decoration-break: clone;
-        -webkit-box-decoration-break: clone;
-      }
-    }
-
-    .entry-meta {
-
-      font-size: 1.5em;
-      font-size: 3.5vw;
-
-      @include media($large-screen) {
-        font-size: 2em;
-        font-size: 1.5vw
-      }
-    }
-
   }
 }
 
-
-.test-list {
+.event-meta {
   list-style: none;
   padding: 0;
-  margin: 2rem 0 0 0;
+  margin: 4rem 0 0 0;
 
   @include align-items(stretch);
   @include display(flex);
   @include flex-direction(row);
-  //@include justify-content(center);
-
-
 
   li {
     color: #fff;
@@ -165,28 +120,6 @@ article.events {
     background: rgba($base-bg-color, .8);
 
     @include flex(1);
-
-    &:first-child {
-
-    }
-    &:nth-child(2) {
-
-    }
-    &:nth-child(3) {
-
-    }
-
-    span {
-      &:before {
-        //content: " ";
-        display: inline-block;
-        border: 6px solid #07699E;
-        border-radius: 50%;
-        margin-right: .3em;
-
-      }
-    }
-
   }
 }
 

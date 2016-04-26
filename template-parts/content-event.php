@@ -56,7 +56,7 @@
 		</div>
 		<?php endif; // call to action ?>
 
-		<ul class="test-list">
+		<ul class="event-meta">
 			<li>
 				<span>Moving Forward: The SDGs in Practice</span>
 			</li>
