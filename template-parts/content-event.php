@@ -18,31 +18,17 @@
 
 ?>
 	<header class="entry-header has-feature-image" <?php echo 'style="background-color: #000;
-	background-image: linear-gradient(
-      rgba(0, 0, 0, 0.0),
-      rgba(0, 0, 0, 0.0) ),
-      url('.$large_image_url[0].');
+	background-image: url('.$large_image_url[0].');
 			background-position: top center;
-			position: relative;
 			padding-bottom: 0;"'; ?>>
 
-		<?php if(get_field('event_theme-')) : ?>
-		<h2 class="event-theme">
-			<span><?php the_field('event_theme'); ?></span>
-		</h2>
-		<?php endif; /* Event Theme // ACF */ ?>
+<?php else : // no feature image ?>
 
-		<?php the_title( '<h1 class="entry-title"><span>', '</span></h1>' ); ?>
+	<header class="entry-header">
 
-		<!--
-		<div class="entry-meta">
-			<h4 class="event-date">
-				<span><?php //icsd_acf_events_date_range(); ?></span>
-			</h4>
-			<h4 class="event-location">
-				<span><?php the_field('event_location_text-'); ?></span>
-		  </h4>
-		</div><!-- .entry-meta -->
+<?php endif; // entry header ?>
+
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 		<?php if ( get_field('event_registration_url') ): ?>
 		<div class="event-call-to-action">
@@ -57,38 +43,17 @@
 		<?php endif; // call to action ?>
 
 		<ul class="event-meta">
+			<?php if(get_field('event_theme-')) : ?>
+			<li class="event-theme"><?php the_field('event_theme'); ?></li>
+			<?php endif; /* Event Theme // ACF */ ?>
 			<li>
-				<span>Moving Forward: The SDGs in Practice</span>
+				<?php icsd_acf_events_date_range(); ?> /
+				<span class="event-location"> <?php the_field('event_location_text'); ?></span>
 			</li>
-			<li><span>September 21 – 22, 2016</span></li>
-			<li><span>New York, NY</span></li>
+			<li><a href="https://twitter.com/ICSD_Conf">@ICSD_Conf</a> / <a href="https://twitter.com/hashtag/ICSD2016?src=hash">#ICSD2016</a></li>
 		</ul>
 
 	</header>
-
-<?php else : // no feature image ?>
-
-	<header class="entry-header">
-
-		<?php if(get_field('event_theme')) : ?>
-		<h2 class="event-theme"><?php the_field('event_theme'); ?></h2>
-		<?php endif; /* Event Theme // ACF */ ?>
-
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
-		<div class="entry-meta">
-			<?php icsd_acf_events_date_range(); ?>
-		</div><!-- .entry-meta -->
-
-		<?php if ( get_field('event_registration_url') ): ?>
-		<div class="event-call-to-action">
-			<?php echo esc_url( the_field('event_registration_url') ); ?>
-		</div>
-		<?php endif; // call to action ?>
-
-	</header><!-- .entry-header -->
-
-<?php endif; // entry header ?>
 
 	<div class="entry-content">
 		<?php the_content(); ?>
@@ -99,50 +64,48 @@
 
 	<div class="speakers">
 		<span class="anchor" id="speakers"></span>
-		<h2>Featured Speakers</h2>
 
 		<ul class="speaker-list">
+			<li><h2>Featured Speakers</h2></li>
 		<?php
 		// loop through speakers
 			while ( have_rows('speaker') ) : the_row();
 
-			$speaker_counter++;
+				$speaker_counter++;
 
-				if( get_row_layout() == 'speaker_details' ):
-		?>
+				$modal_id = 'speaker_modal_id_'.$speaker_counter;
+
+				if( get_row_layout() == 'speaker_details' ): ?>
 				<li>
-					<div class="speaker-header">
 						<?php
 						if(get_sub_field('speaker_photo')):
 							$image = get_sub_field('speaker_photo');
-							$size = 'thumbnail';
+							$size = 'medium';
 							$thumb = $image['sizes'][ $size ];
-							echo '<img src="'.$thumb.'" class="speaker-photo"/>';
+							echo '<img src="'.$thumb.'" class="speaker-photo js-modal"
+							data-modal-prefix-class="speaker"
+							data-modal-content-id="'.$modal_id.'"
+							data-modal-title="'.get_sub_field('speaker_name').'"
+							data-modal-close-text="Close"
+			        data-modal-close-title="Close" />';
 						endif; /* Event -- Speaker Photos // ACF // */ ?>
 
-						<div>
-
-						<?php
-						if ( get_sub_field('speaker_name') ) :
-							$modal_id = 'speaker_modal_id_'.$speaker_counter;
-			      ?>
-			        <button class="js-modal speaker-name"
+						<?php	if ( get_sub_field('speaker_name') ) : ?>
+			        <h3 class="js-modal speaker-name"
 			        data-modal-prefix-class="speaker"
 			        data-modal-content-id="<?php echo $modal_id; ?>"
 			        data-modal-title="<?php the_sub_field('speaker_name');?>"
 			        data-modal-close-text="Close"
 			        data-modal-close-title="Close">
 			        <?php the_sub_field('speaker_name'); ?>
-			        </button>
+							<?php if(get_sub_field('speaker_title')): ?>
+							<span class="speaker-title">
+							  <?php the_sub_field('speaker_title'); /* Event -- Speaker Title // ACF */ ?>
+						  </span>
+							<?php endif; // speaker title ?>
+						</h3>
 			      <?php endif; // speaker name ?>
 
-						<?php if(get_sub_field('speaker_title')): ?>
-							<h4 class="speaker-title">
-								<?php the_sub_field('speaker_title'); /* Event -- Speaker Title // ACF */ ?>
-							</h4>
-						<?php endif; // speaker title ?>
-						</div>
-						</div><!-- Speaker Header -->
 
 						<?php if ( get_sub_field('speaker_bio') ): ?>
 						<div id="<?php echo $modal_id; ?>" class="speaker-bio">
@@ -153,7 +116,7 @@
 								$size = 'thumbnail';
 								$thumb = $image['sizes'][ $size ];
 
-								echo '<img src="'.$thumb.'" class="speaker-photo" />';
+								echo '<img src="'.$thumb.'" class="speaker-photo-modal" />';
 
 							endif; /* Event -- Speaker Photos // ACF // */ ?>
 

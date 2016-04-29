@@ -24,14 +24,9 @@
 	<header id="header" class="okayNav-header">
 		<?php
 			if ( function_exists( 'the_custom_logo' ) ) {
-			the_custom_logo();
+			  the_custom_logo();
 			}
 		?>
-		<!--
-			<a class="okayNav-header__logo" href="#">
-				 Logo
-			</a>
-		-->
 
 			<nav role="navigation" id="nav-main" class="okayNav">
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => 'none', 'menu_id' => 'primary-menu' ) ); ?>

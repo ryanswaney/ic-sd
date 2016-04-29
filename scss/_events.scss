@@ -23,20 +23,22 @@ article.events {
   }
 
   .entry-header {
-
     background: linear-gradient(270deg, #22cfa2, #227dcf);
     background-size: 400% 400%;
-
-    //padding: 140px 25px 50px 25px;
-    //padding: 140px 0 50px 0;
     padding: 12em 0 0 0;
+  }
 
-    .event-theme {
-      font-family: $base-font-family;
-      font-size: $base-font-size;
-      font-weight: 400;
-    }
-
+  .entry-title {
+    text-align: center;
+    color: #fff;
+    font-size: 12vw;
+    line-height: 1;
+    text-transform: uppercase;
+    border: 0;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 90%;
+    padding: 0;
   }
 
   .event-date,
@@ -44,6 +46,10 @@ article.events {
     display: inline-block;
     font-family: $base-font-family;
     font-weight: 400;
+  }
+
+  .event-location {
+    font-weight: 700;
   }
 
   .event-call-to-action {
@@ -73,33 +79,14 @@ article.events {
         border-color: darken(#E46E31, 6%);
         padding: .333em 3em;
       }
-
     }
-
   }
-
 
   .entry-header.has-feature-image {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    //padding-top: 140px;
-    //padding-bottom: 140px;
     min-height: 100%;
-
-    .entry-title {
-      text-align: center;
-      color: #fff;
-      font-size: 12vw;
-      line-height: 1;
-      text-transform: uppercase;
-      border: 0;
-      margin-right: auto;
-      margin-left: auto;
-      max-width: 90%;
-      padding: 0;
-    }
-
   }
 }
 
@@ -111,6 +98,17 @@ article.events {
   @include align-items(stretch);
   @include display(flex);
   @include flex-direction(row);
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 2px solid #29BEE2;
+
+    &:hover,
+    &:focus {
+      border-color: lighten(#29BEE2, 10%);
+    }
+  }
 
   li {
     color: #fff;
@@ -228,52 +226,16 @@ article.events {
 
 // Speakers
 .speakers {
-  /*
-  @include span-columns(10 of 12);
-  @include shift(1);
-
-  @include media($large-screen) {
-    @include span-columns(6 of 12);
-    @include shift(3);
-  }
-  */
 
   @include span-columns(12 of 12);
 
-  margin-top: 2em;
-  margin-bottom: 2em;
-  padding: 1em 0;
+  //background-color: #ccc;
 
-  background-color: lighten($action-color, 50%);
-
-  h2 {
-    text-align: center;
-  }
-
-  span.more {
-    color: $action-color;
-    cursor: pointer;
-    display: inline-block;
-    font-size: .5em;
-    text-transform: uppercase;
-    vertical-align: middle;
-
-    &:before {
-      content: " ";
-      border-left: 2px solid $action-color;
-      padding-right: .5em;
-
-    }
-
-    &:hover,
-    &:focus {
-      text-decoration: underline;
-    }
-
-  }
+  margin-top: 3em;
+  margin-bottom: 3em;
 
 }
-
+/*
 .speaker-header {
   @include outer-container;
   margin-bottom: 1em;
@@ -285,8 +247,9 @@ article.events {
     @include span-columns(9);
   }
 }
+*/
 
-.speaker-list {
+.speaker-list-old {
 
   /*
   list-style: none;
@@ -313,21 +276,27 @@ article.events {
 
 }
 
-/*
-.speaker-name {
-  //font-size: 1.5em;
-  font-size: 1em;
-  padding-top: 0;
+.speaker-list {
+  @include align-items(stretch);
+  @include display(flex);
+  @include flex-direction(row);
+  @include justify-content(flex-start);
+  @include flex-wrap(wrap);
 
-  @include media($large-screen) {
-    //padding-top: 1.5em;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+     @include flex(50%);
+
+     @include media($large-screen) {
+       @include flex(25%);
+     }
   }
-}*/
+}
 
 .speaker-name {
-  border: 0;
-  margin-bottom: .5em;
   width: 100%;
   text-align: left;
   background: none;
@@ -335,34 +304,32 @@ article.events {
   font-weight: 700;
   font-size: 1em;
   line-height: 1.2;
-  border-bottom: 1px solid #ccc;
-
-  &:hover,
-  &:focus {
-    border-bottom: 1px solid $action-color;
-  }
+  padding: 1em;
+  //background-color: rgba(155,155,155,.9);
+  cursor: pointer;
 }
 
 .speaker-photo {
-  border-radius: 50%;
-  /* Prevent background color leak outs */
-  -webkit-background-clip: padding-box;
-  -moz-background-clip:    padding;
-  background-clip:         padding-box;
+  cursor: pointer;
+  height: auto;
+  width: 100%;
+  vertical-align: top;
 }
+
 .speaker-title {
   font-size: 0.8em;
   font-family: $base-font-family;
   font-weight: 400;
   line-height: 1.4;
   padding-top: 0;
+  display: block;
 
-  /*
-  @include media($large-screen) {
-    font-size: 1.15em;
-  }
-  */
+}
 
+.speaker-photo-modal {
+  border-radius: 50%;
+  float: right;
+  margin: 1em 1em;
 }
 
 .speaker-bio {
