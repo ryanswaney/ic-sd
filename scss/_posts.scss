@@ -3,15 +3,6 @@ article.attachment,
 article.page,
 article.post {
 
-  /*
-  @include span-columns(12 of 12);
-
-  @include media($large-screen) {
-    @include span-columns(8 of 12);
-    @include shift(2);
-  }
-  */
-
   @include outer-container;
 
 }
@@ -40,7 +31,7 @@ article.post {
 }
 
 .entry-title {
-  @include pad(0 0 1rem 0);
+  @include pad(0 0 0 0);
 
   a {
     color: $action-color;
@@ -54,8 +45,43 @@ article.post {
 }
 
 .posted-on {
-  a { color: $action-color;
-    text-decoration: none;}
+  display: block;
+  margin-bottom: .3em;
+  font-size: 80%;
+
+  a {
+    color: $action-color;
+    text-decoration: none;
+  }
+}
+
+.blog {
+  .site-main {
+    @include display(flex);
+    @include flex-flow(row);
+    @include flex-wrap(wrap);
+
+    width: 90%;
+    margin: 6em auto 2em auto;
+
+
+  }
+  .post {
+    @include flex(100%);
+
+    //background-color: lighten($action-color, 83%);
+    margin: 0;
+
+    @include media($large-screen) {
+      @include flex(50%);
+      padding: 1em;
+    }
+  }
+}
+
+.posts-navigation {
+  @include flex(100%);
+  padding: 1em;
 }
 
 .single-post {

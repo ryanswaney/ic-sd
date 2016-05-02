@@ -1,6 +1,6 @@
 /*!
 Theme Name: ICSD
-Theme URI: 
+Theme URI:
 Author: Ryan Swaney
 Author URI: smashandgrablabs.com
 Description: WordPress theme for the Int. Conference on Sustainable Development.
@@ -23,6 +23,7 @@ Tags:
 @import "scss/typography";
 @import "scss/navigation";
 @import "scss/posts";
+//@import "scss/posts_flex";
 @import "scss/events";
 @import "scss/forms";
 @import "scss/video";

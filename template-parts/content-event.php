@@ -50,7 +50,58 @@
 				<?php icsd_acf_events_date_range(); ?> /
 				<span class="event-location"> <?php the_field('event_location_text'); ?></span>
 			</li>
-			<li><a href="https://twitter.com/ICSD_Conf">@ICSD_Conf</a> / <a href="https://twitter.com/hashtag/ICSD2016?src=hash">#ICSD2016</a></li>
+			<li>
+				<?php if(get_field('event_twitter_link')) :
+
+					$twitter_link = get_field('event_twitter_link');
+
+				?>
+				<svg viewBox="328 355 335 276" xmlns="http://www.w3.org/2000/svg" class="twitter-logo">
+					<path d="
+						M 630, 425
+						A 195, 195 0 0 1 331, 600
+						A 142, 142 0 0 0 428, 570
+						A  70,  70 0 0 1 370, 523
+						A  70,  70 0 0 0 401, 521
+						A  70,  70 0 0 1 344, 455
+						A  70,  70 0 0 0 372, 460
+						A  70,  70 0 0 1 354, 370
+						A 195, 195 0 0 0 495, 442
+						A  67,  67 0 0 1 611, 380
+						A 117, 117 0 0 0 654, 363
+						A  65,  65 0 0 1 623, 401
+						A 117, 117 0 0 0 662, 390
+						A  65,  65 0 0 1 630, 425
+						Z"
+						style="fill:#3BA9EE;"/>
+				</svg>
+				<a href="<?php echo "https://twitter.com/".$twitter_link; ?>"><?php echo "@".$twitter_link; ?></a>
+			<?php endif; // twitter link -- acf event_twitter_link ?>
+			<?php if(get_field('event_hashtag')) :
+				$twitter_hashtag = get_field('event_hashtag');
+			?>
+				<svg viewBox="328 355 335 276" xmlns="http://www.w3.org/2000/svg" class="twitter-logo">
+					<path d="
+						M 630, 425
+						A 195, 195 0 0 1 331, 600
+						A 142, 142 0 0 0 428, 570
+						A  70,  70 0 0 1 370, 523
+						A  70,  70 0 0 0 401, 521
+						A  70,  70 0 0 1 344, 455
+						A  70,  70 0 0 0 372, 460
+						A  70,  70 0 0 1 354, 370
+						A 195, 195 0 0 0 495, 442
+						A  67,  67 0 0 1 611, 380
+						A 117, 117 0 0 0 654, 363
+						A  65,  65 0 0 1 623, 401
+						A 117, 117 0 0 0 662, 390
+						A  65,  65 0 0 1 630, 425
+						Z"
+						style="fill:#3BA9EE;"/>
+				</svg>
+				<a href="<?php echo "https://twitter.com/hashtag/".$twitter_hashtag; ?>"><?php echo "#".$twitter_hashtag; ?></a>
+			<?php endif; // hashtag -- acf event_hashtag ?>
+		  </li>
 		</ul>
 
 	</header>
@@ -65,8 +116,9 @@
 	<div class="speakers">
 		<span class="anchor" id="speakers"></span>
 
+		<h2>Featured Speakers</h2>
+
 		<ul class="speaker-list">
-			<li><h2>Featured Speakers</h2></li>
 		<?php
 		// loop through speakers
 			while ( have_rows('speaker') ) : the_row();

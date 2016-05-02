@@ -95,20 +95,9 @@ article.events {
   padding: 0;
   margin: 4rem 0 0 0;
 
-  @include align-items(stretch);
   @include display(flex);
-  @include flex-direction(row);
-
-  a {
-    color: #fff;
-    text-decoration: none;
-    border-bottom: 2px solid #29BEE2;
-
-    &:hover,
-    &:focus {
-      border-color: lighten(#29BEE2, 10%);
-    }
-  }
+  @include flex-flow(row);
+  @include flex-wrap(wrap);
 
   li {
     color: #fff;
@@ -117,8 +106,27 @@ article.events {
     padding: 1em .333em;
     background: rgba($base-bg-color, .8);
 
-    @include flex(1);
+    flex: 0 0 100%;
+
+    @include media($large-screen) {
+      flex: 0 0 50%;
+    }
   }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 2px solid #29BEE2;
+    margin-right: 1em;
+
+    &:hover,
+    &:focus {
+      border-color: lighten(#29BEE2, 10%);
+    }
+
+  }
+
+
 }
 
 
@@ -234,6 +242,12 @@ article.events {
   margin-top: 3em;
   margin-bottom: 3em;
 
+  h2 {
+    font-size: 3em;
+    padding: 2rem;
+    text-align: center;
+  }
+
 }
 /*
 .speaker-header {
@@ -288,10 +302,10 @@ article.events {
   padding: 0;
 
   li {
-     @include flex(50%);
+     @include flex(0 0 50%);
 
      @include media($large-screen) {
-       @include flex(25%);
+       @include flex(0 0 25%);
      }
   }
 }

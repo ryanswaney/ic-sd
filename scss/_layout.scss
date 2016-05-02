@@ -42,7 +42,7 @@ body {
 .archive,
 .attachment,
 .blog,
-.page, {
+.page {
   .type-attachment,
   .type-events,
   .type-post,
@@ -50,6 +50,17 @@ body {
     background-color: #fff;
     margin-top: 140px;
   }
+}
+
+.error-404 {
+  @include outer-container;
+  margin-top: 140px;
+
+  .page-content {
+    @include span-columns(10 of 12);
+    @include shift(2);
+  }
+
 }
 
 .home.page {
@@ -67,6 +78,7 @@ body {
     @include shift(2);
   }
 }
+
 
 // Footer Grid
 .site-footer {

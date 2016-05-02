@@ -1,32 +1,3 @@
-// Offset anchor links for fixed header
-/* :target:before {
-    content: "";
-    display: block;
-    height: 140px;
-    margin: -140px 0 0;
-    outline: 0;
-} */
-
-/*
-
-.anchor {
-  display: block;
-  height: 140px;
-  margin-top: -140px;
-  visibility: hidden;
-}
-
-.skip-link {
-    display: none;
-}
-
-// Removes outline from focus
-:focus {
-    outline: 0;
-}
-
-*/
-
 .site-header,
 .skip-link { display: none; }
 
@@ -245,6 +216,11 @@ body.okayNav-loaded {
   background: #546edb;
 }
 
+// Social media
+.twitter-logo {
+  display: inline-block;
+  height: .7em;
+}
 
 
 // Footer Menus
@@ -286,6 +262,46 @@ body.okayNav-loaded {
     }
   }
 
+}
+
+// WordPress post navigation links
+
+.posts-navigation > h2 {
+  display: none;
+}
+
+.nav-links {
+  @include display(flex);
+  @include flex-flow(row);
+  @include flex-wrap(wrap);
+
+  .nav-previous {
+    border-left: 4px solid lighten($action-color, 60%);
+  }
+  .nav-next {
+    border-right: 4px solid lighten($action-color, 60%);
+  }
+
+  .nav-previous,
+  .nav-next {
+    @include flex(1);
+    text-align: center;
+    a {
+      background: $action-color;
+      color: #fff;
+      font-size: 110%;
+      text-decoration: none;
+      display: block;
+      padding: 1.333em 1em;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background: lighten($action-color, 40%);
+      }
+
+    }
+  }
 }
 
 

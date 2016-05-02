@@ -16,17 +16,8 @@ get_header(); ?>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Try one of the links below or a search?', 'icsd' ); ?></p>
+					<p><?php esc_html_e( 'It looks like nothing was found at this location.', 'icsd' ); ?></p>
 
-					<?php get_search_form(); ?>
-
-					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
-
-					<?php
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . esc_html__( 'Try looking in the monthly archives. %1$s' ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-					?>
 
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
