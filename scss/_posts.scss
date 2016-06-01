@@ -34,7 +34,7 @@ article.post {
   @include pad(0 0 0 0);
 
   a {
-    color: $action-color;
+    color: lighten($action-color, 30%);
     text-decoration: none;
 
     &:hover,
@@ -166,7 +166,7 @@ article.post {
   hr { border: 1px solid $action-color; }
 
   a {
-    color: $action-color;
+    color: lighten($action-color, 30%);
     text-decoration: none;
 
     &:hover, &:focus {

@@ -1,6 +1,8 @@
 jQuery(document).ready(function($) {
 
-  var navigation = $('#nav-main').okayNav();
+  var navigation = $('#nav-main').okayNav({
+    swipe_enabled: false
+  });
 
   // remove height/width attributes from WP oEmbed iframes
   var $wp_oembed = $("iframe[class*='wp-embedded-content']");

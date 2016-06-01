@@ -237,6 +237,7 @@ body.okayNav-loaded {
     font-weight: 700;
     //text-transform: uppercase;
   }
+}
 
   .footer-menu {
     list-style: none;
@@ -245,24 +246,23 @@ body.okayNav-loaded {
 
     li {
       font-size: 95%;
+    }
+    a {
+      border: none;
+      color: #fff;
+      font-family: $base-font-family;
+      font-weight: 400;
+      padding: 0 0 1em 0;
+      text-transform: none;
+      text-decoration: none;
 
-      a {
-        border: none;
-        color: #fff;
-        font-family: $base-font-family;
-        font-weight: 400;
-        padding: 0 0 1em 0;
-        text-transform: none;
-
-        &:hover,
-        &:focus {
-          text-decoration: underline;
-        }
+      &:hover,
+      &:focus {
+        color: lighten($action-color, 50%);
+        text-decoration: underline;
       }
     }
   }
-
-}
 
 // WordPress post navigation links
 
