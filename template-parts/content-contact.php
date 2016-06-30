@@ -15,7 +15,8 @@
   <!-- Begin MailChimp Signup Form -->
 <div id="mc_embed_signup">
 <span class="anchor" id="subscribe"></span>
-<form action="//unsdsn.us8.list-manage.com/subscribe/post?u=a04105bfca6c4cb8c24ff8680&amp;id=ab7a9b8629" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<!-- ic-sd.us8.list-manage.com/subscribe/post?u=a04105bfca6c4cb8c24ff8680&amp;id=9343d21b35-->
+<form action="//ic-sd.us8.list-manage.com/subscribe/post?u=a04105bfca6c4cb8c24ff8680&amp;id=9343d21b35" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll">
   <h2>Subscribe for updates from the ICSD</h2>
 <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
