@@ -435,7 +435,7 @@
 	<!-- sponsors -->
 	<div class="sponsors">
 		<span class="anchor" id="sponsors"></span>
-		<h2>Sponsors</h2>
+		<h2>Sponsors &amp; Partners</h2>
 		<ul class="sponsor-list">
 		<?php while ( have_rows('sponsor_list') ) : the_row(); ?>
 			<li>
