@@ -113,6 +113,10 @@ function icsd_scripts() {
 
 	//wp_enqueue_script( 'icsd-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
+	wp_scripts()->add_data( 'jquery', 'group', 1 );
+	wp_scripts()->add_data( 'jquery-core', 'group', 1 );
+	wp_scripts()->add_data( 'jquery-migrate', 'group', 1 );
+
 	wp_enqueue_script( 'okaynav-js', get_template_directory_uri() . '/js/jquery.okayNav-min.js', array('jquery'), '2.0.4', true );
 
 	wp_enqueue_script( 'icsd-js', get_template_directory_uri() . '/js/icsd.js', array('jquery'), '20130115', true );
