@@ -147,11 +147,11 @@ article.events {
 .sessions {
 
   li.single-session:nth-child(odd) {
-    background-color: lighten($action-color, 50%);
+    background-color: lighten($action-color, 80%);
   }
 
   li.single-session:nth-child(1) {
-    background-color: lighten($action-color, 35%);
+    background-color: lighten($action-color, 70%);
   }
 
 }
@@ -179,6 +179,8 @@ article.events {
     }
 
     h2 {padding-top: 0;}
+
+    a { color: lighten($action-color, 30%); }
 
 
   }
