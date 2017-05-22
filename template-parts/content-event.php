@@ -398,6 +398,72 @@
 
 	<?php endif; // Day 3 Sessions ?>
 
+	<?php if( have_rows('session_group_4', $agenda_object->ID) ): ?>
+
+		<ol class="sessions">
+
+		<?php while ( have_rows('session_group_4', $agenda_object->ID) ) : the_row(); ?>
+
+
+		<?php if( get_row_layout() == 'd4_basic_session' ): ?>
+
+			<li class="single-session">
+				<time><?php the_sub_field('d4_bs_time'); ?></time>
+				<div class="event-description">
+
+				<?php
+					$image = get_sub_field('d4_bs_photo');
+
+					if( !empty($image) ):
+
+					$size = 'thumbnail';
+					$thumb = $image['sizes'][ $size ];
+
+					?>
+
+					<img class="session-thumb-photo" src="<?php echo $thumb ?>" alt="<?php echo $image['alt']; ?>" />
+
+					<?php endif; ?>
+
+					<h2><?php the_sub_field('d4_bs_title'); ?></h2>
+
+					<?php the_sub_field('d4_bs_desc'); ?>
+				</div>
+			</li>
+
+		<?php elseif( get_row_layout() == 'd4_parallel_session' ): ?>
+
+			<li class="single-session has-session-info">
+				<time><?php the_sub_field('d4_ps_time'); ?></time>
+				<div class="event-description">
+					<h2><?php the_sub_field('d4_ps_title'); ?></h2>
+
+					<?php if( have_rows('d4_ps_list') ): ?>
+					<div class="session-extended">
+						<ol>
+						<?php while ( have_rows('d4_ps_list') ) : the_row(); ?>
+							<li>
+								<h3><?php the_sub_field('d4_psl_title' ); ?></h3>
+								<div class="sub-session-desc">
+								<?php the_sub_field('d4_ps_desc'); ?>
+								</div>
+							</li>
+						<?php endwhile; ?>
+						</ol>
+					</div>
+					<?php endif; // Parallel Sessions ?>
+
+				</div>
+			</li>
+
+			<?php endif; // Session Layout ?>
+
+		<?php endwhile; ?>
+
+		</ol> <!-- // Sessions -->
+
+	<?php endif; // Day 4 Sessions ?>
+
 	</div>
 
 	<?php endif; ?>
