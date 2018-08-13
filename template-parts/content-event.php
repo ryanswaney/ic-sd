@@ -93,7 +93,7 @@
 						<?php
 							$image = get_sub_field('speaker_photo');
 
-							$size = 'thumbnail';
+							$size = 'medium';
 							$thumb = $image['sizes'][ $size ];
 						?>
 
