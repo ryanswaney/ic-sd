@@ -47,7 +47,7 @@
 			<li class="event-theme"><?php the_field('event_theme'); ?></li>
 			<?php endif; /* Event Theme // ACF */ ?>
 			<li>
-				<?php icsd_acf_events_date_range(); ?> /
+				<?php icsd_acf_events_date_range(); ?> 
 				<span class="event-location"> <?php the_field('event_location_text'); ?></span>
 			</li>
 			<li>
