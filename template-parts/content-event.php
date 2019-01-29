@@ -132,7 +132,7 @@
 						<?php
 						if(get_sub_field('speaker_photo')):
 							$image = get_sub_field('speaker_photo');
-							$size = 'thumbnail';
+							$size = 'medium';
 							$thumb = $image['sizes'][ $size ];
 							echo '<img src="'.$thumb.'" class="speaker-photo js-modal"
 							data-modal-prefix-class="speaker"
@@ -165,7 +165,7 @@
 							<?php
 							if(get_sub_field('speaker_photo')) :
 								$image = get_sub_field('speaker_photo');
-								$size = 'thumbnail';
+								$size = 'medium';
 								$thumb = $image['sizes'][ $size ];
 
 								echo '<img src="'.$thumb.'" class="speaker-photo-modal" />';
